@@ -1,11 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
-gem 'sqlite3'
 gem 'jquery-rails'
 
+group :development do
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'rb-fsevent', require: false
+  gem 'rb-inotify', require: false
+end
+
 group :test, :development do
+  gem 'sqlite3'
   gem "rspec-rails", "~> 2.0"
+  gem 'spork-rails'
 end
 
 # Gems used only for assets and not required

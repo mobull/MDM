@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe User do
-  let (:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:role) { FactoryGirl.create(:role) }
 
   it 'creates user via Factory' do
     expect { user }.to change(User, :count).by(1)
@@ -34,5 +35,14 @@ describe User do
     (0..5).each do |i|
       expect { FactoryGirl.create(:user, password: 'x' * i) }.to raise_error
     end
+  end
+
+  describe '#roles' do
+    let(:another_role) { FactoryGirl.create(:role) }
+    before { user.roles << [role, another_role] }
+
+    subject { user.roles }
+    it { should have(2).roles }
+    it { should match_array([role, another_role])}
   end
 end

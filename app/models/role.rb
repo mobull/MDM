@@ -5,6 +5,8 @@ class Role < ActiveRecord::Base
 
   before_save :strip_name
 
+  has_and_belongs_to_many :users
+
   private
 
     def strip_name

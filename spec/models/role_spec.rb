@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Role do
 
   let(:role) { FactoryGirl.create(:role) }
+  let(:user) { FactoryGirl.create(:user) }
 
   it 'creates role via Factory' do
     expect { role }.to change(Role, :count).by(1)
@@ -26,5 +27,14 @@ describe Role do
       role.update_attributes(name: '    name ')
       role.name = 'name'
     end
+  end
+
+  describe '#roles' do
+    let(:another_user) { FactoryGirl.create(:user) }
+    before { role.users << [user, another_user] }
+
+    subject { role.users }
+    it { should have(2).users }
+    it { should match_array([user, another_user])}
   end
 end

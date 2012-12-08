@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include ActiveModel::ForbiddenAttributesProtection
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :omniauthable, :validatable
   devise :database_authenticatable, :registerable, :lockable,

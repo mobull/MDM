@@ -33,7 +33,7 @@ class RolesController < ApplicationController
   end
 
   def create
-    @role = Role.new(params[:role])
+    @role = Role.new(role_params)
 
     flash[:notice] = 'Role was successfully created.' if @role.save
 
@@ -43,7 +43,7 @@ class RolesController < ApplicationController
   def update
     @role = Role.find(params[:id])
 
-    flash[notice] = 'Role was successfully updated.' if @role.update_attributes(params[:role])
+    flash[notice] = 'Role was successfully updated.' if @role.update_attributes(role_params)
 
     respond_with @role
   end
@@ -54,4 +54,10 @@ class RolesController < ApplicationController
 
     respond_with @role
   end
+
+  private
+
+    def role_params
+      params.require(:role).permit(:name)
+    end
 end

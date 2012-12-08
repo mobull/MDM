@@ -6,6 +6,7 @@ gem 'devise'
 gem 'slim'
 gem 'slim-rails'
 gem 'cancan'
+gem 'strong_parameters'
 
 group :development do
   gem 'guard-rspec'

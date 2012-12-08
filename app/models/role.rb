@@ -1,5 +1,5 @@
 class Role < ActiveRecord::Base
-  attr_accessible :name
+  include ActiveModel::ForbiddenAttributesProtection
 
   validates :name, presence: true
 

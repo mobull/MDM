@@ -1,5 +1,5 @@
 class AllowedAction < ActiveRecord::Base
-  attr_accessible :name
+  include ActiveModel::ForbiddenAttributesProtection
 
   belongs_to :role
 

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
   let (:user) { FactoryGirl.create(:user) }
 
-  it 'creates a new user via Factory' do
+  it 'creates user via Factory' do
     expect { user }.to change(User, :count).by(1)
   end
 

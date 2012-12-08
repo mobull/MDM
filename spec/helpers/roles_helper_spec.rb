@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe PagesHelper do
+describe RolesHelper do
 
 end

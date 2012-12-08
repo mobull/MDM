@@ -1,4 +1,7 @@
 MDM::Application.routes.draw do
+  resources :roles
+
+
   get "pages/dashboard"
 
   devise_for :users

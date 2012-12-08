@@ -4,6 +4,7 @@ gem 'rails', '3.2.9'
 gem 'jquery-rails'
 gem 'devise'
 gem 'slim'
+gem 'slim-rails'
 
 group :development do
   gem 'guard-rspec'

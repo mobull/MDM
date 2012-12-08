@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'slim'
 gem 'slim-rails'
+gem 'cancan'
 
 group :development do
   gem 'guard-rspec'

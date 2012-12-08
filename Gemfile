@@ -19,6 +19,7 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem 'spork-rails'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 # Gems used only for assets and not required

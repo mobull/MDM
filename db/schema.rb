@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208114737) do
+ActiveRecord::Schema.define(:version => 20121208132618) do
+
+  create_table "allowed_actions", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.string  "name"
+  end
+
+  add_index "allowed_actions", ["role_id"], :name => "index_allowed_actions_on_role_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

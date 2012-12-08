@@ -29,12 +29,24 @@ describe Role do
     end
   end
 
-  describe '#roles' do
+  describe '#users' do
     let(:another_user) { FactoryGirl.create(:user) }
     before { role.users << [user, another_user] }
 
     subject { role.users }
     it { should have(2).users }
     it { should match_array([user, another_user])}
+  end
+
+  describe '#privileges' do
+    before do
+      %w(create_roles assign_role_to_user).each do |name|
+        role.allowed_actions.create(name: name)
+      end
+    end
+
+    it 'returns allowed action name symbols in array' do
+      role.privileges.should match_array([:create_roles, :assign_role_to_user])
+    end
   end
 end

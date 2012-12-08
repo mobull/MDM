@@ -13,4 +13,9 @@ class User < ActiveRecord::Base
   validates :password,  length: { minimum: 6 }
 
   has_and_belongs_to_many :roles
+  has_many :allowed_actions, through: :roles
+
+  def privileges
+    allowed_actions.collect(&:name).collect(&:to_sym).uniq
+  end
 end

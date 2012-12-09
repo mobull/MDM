@@ -37,7 +37,7 @@ class RolesController < ApplicationController
 
     flash[:notice] = 'Role was successfully created.' if @role.save
 
-    respond_with @role, location: roles_path
+    respond_with @role, location: roles_url
   end
 
   def update

@@ -1,0 +1,11 @@
+= semantic_form_for :configuration, html: { method: :put}  do |f|
+
+  = f.inputs 'Basic' do
+    = f.input :company_legal_name
+    = f.input :company_display_name
+
+  = f.inputs 'Help Desk' do
+    = f.input :help_desk_guide, input_html: { :rows => 20, :cols => 20, :maxlength => 10  }
+
+  = f.actions do
+    = f.action :submit

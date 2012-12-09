@@ -33,4 +33,21 @@ describe Configuration do
       end
     end
   end
+
+  describe '#update_attributes(params)' do
+    let(:params) do
+      params = {}
+      FIELDS_STORE_IN_GLOBAL_VARIABLES.each do |field|
+        params.merge!(field.to_sym => "new_#{field}")
+      end
+      params
+    end
+
+    it 'updates fields massively' do
+      configuration.update_attributes(params)
+      FIELDS_STORE_IN_GLOBAL_VARIABLES.each do |field|
+        Configuration.new.send(field).should == "new_#{field}"
+      end
+    end
+  end
 end

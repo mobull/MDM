@@ -14,4 +14,9 @@ class Configuration
     end
     self
   end
+
+  def update_attributes(params)
+    params.each { |key, value| send("#{key}=", value) if key.to_sym.in? FIELDS_STORE_IN_GLOBAL_VARIABLES }
+    save
+  end
 end

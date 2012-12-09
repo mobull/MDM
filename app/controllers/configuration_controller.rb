@@ -10,5 +10,14 @@ class ConfigurationController < ApplicationController
   end
 
   def update
+    configuration = ::Configuration.new
+    flash[notice] = 'Configuration was successfully updated.' if configuration.update_attributes(configuration_params)
+    respond_with configuration, location: configuration_url
   end
+
+  private
+
+    def configuration_params
+      params.require(:configuration).permit(:company_legal_name, :company_display_name, :help_desk_guide)
+    end
 end

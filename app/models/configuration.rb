@@ -1,4 +1,5 @@
 class Configuration
+
   FIELDS_STORE_IN_GLOBAL_VARIABLES = [:company_legal_name, :company_display_name, :help_desk_guide]
 
   FIELDS_STORE_IN_GLOBAL_VARIABLES.each { |field| attr_accessor field }

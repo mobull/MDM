@@ -1,8 +1,11 @@
 MDM::Application.routes.draw do
-  resources :roles
-
 
   get "pages/dashboard"
+
+  resources :roles
+
+  get "configuration" => 'configuration#edit'
+  put "configuration" => 'configuration#update'
 
   devise_for :users
 

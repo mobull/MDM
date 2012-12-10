@@ -48,6 +48,8 @@ Spork.prefork do
     # Devise Test Helpers
     config.include Devise::TestHelpers, type: :controller
   end
+
+  load "#{Rails.root}/db/seeds.rb"
 end
 
 Spork.each_run do

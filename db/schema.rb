@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210081420) do
+ActiveRecord::Schema.define(:version => 20121210083522) do
 
   create_table "allowed_actions", :id => false, :force => true do |t|
     t.integer "role_id"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20121210081420) do
   end
 
   add_index "global_variables", ["name"], :name => "index_global_variables_on_name"
+
+  create_table "platforms", :id => false, :force => true do |t|
+    t.string "identifier"
+    t.string "display_name"
+  end
+
+  add_index "platforms", ["identifier"], :name => "index_platforms_on_identifier", :unique => true
 
   create_table "roles", :force => true do |t|
     t.string   "name"

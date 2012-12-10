@@ -45,8 +45,9 @@ doc/
 # Heroku or Capistrano can and should regenerate them on every deploy
 public/assets
 
-#### Remove RSpec View Tests
-spec/views/*
-
 #### Remove Coverage Report
 coverage
+
+#### Remove Unwanted RSpec Tests
+spec/views/*
+spec/requests/*

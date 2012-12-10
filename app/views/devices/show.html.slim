@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong User:
+  = @device.user
+p
+  strong Name:
+  = @device.name
+
+= link_to 'Edit', edit_device_path(@device)
+'|
+= link_to 'Back', devices_path

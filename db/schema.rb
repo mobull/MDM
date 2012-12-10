@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208182239) do
+ActiveRecord::Schema.define(:version => 20121210073933) do
 
   create_table "allowed_actions", :id => false, :force => true do |t|
     t.integer "role_id"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(:version => 20121208182239) do
   end
 
   add_index "allowed_actions", ["role_id"], :name => "index_allowed_actions_on_role_id"
+
+  create_table "contact_lines", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "category",    :null => false
+    t.string   "content",     :null => false
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "contact_lines", ["category"], :name => "index_contact_lines_on_category"
+  add_index "contact_lines", ["user_id"], :name => "index_contact_lines_on_user_id"
 
   create_table "global_variables", :id => false, :force => true do |t|
     t.string   "name",       :null => false
@@ -57,11 +69,13 @@ ActiveRecord::Schema.define(:version => 20121208182239) do
     t.datetime "locked_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "username"
+    t.string   "name"
+    t.text     "bio"
+    t.string   "email"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
-  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
 end

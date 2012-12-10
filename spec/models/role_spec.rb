@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Role do
-
   let(:role) { FactoryGirl.create(:role) }
   let(:user) { FactoryGirl.create(:user) }
 

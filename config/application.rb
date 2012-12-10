@@ -67,4 +67,4 @@ module MDM
   end
 end
 
-require 'guard_accelerator'
+require 'mdm'

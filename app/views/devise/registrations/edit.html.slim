@@ -4,9 +4,9 @@ h2
   = f.inputs 'Basic' do
     = f.input :name
     = f.input :bio
+    = f.input :email
 
-  = f.inputs 'Credential' do
-    = f.input :username
+  = f.inputs 'New Password' do
     = f.input :password, label: 'New Password', required: false
     = f.input :password_confirmation, label: 'New Password Confirmation', required: false
 

@@ -16,6 +16,10 @@ group :development do
   gem 'rb-inotify', require: false
 end
 
+group :test do
+  gem 'simplecov', require: false
+end
+
 group :test, :development do
   gem 'sqlite3'
   gem "rspec-rails", "~> 2.0"

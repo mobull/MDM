@@ -47,3 +47,6 @@ public/assets
 
 #### Remove RSpec View Tests
 spec/views/*
+
+#### Remove Coverage Report
+coverage

@@ -2,12 +2,12 @@ MDM::Application.routes.draw do
 
   get "pages/dashboard"
 
-  resources :roles
-
   get "configuration" => 'configuration#edit'
   put "configuration" => 'configuration#update'
 
   devise_for :users
+  resources :devices
+  resources :roles
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

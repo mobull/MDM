@@ -39,3 +39,5 @@ Please checkout [Mobull Wiki](https://github.com/mobull/playbook/wiki/).
 ### Backbone Rails
 
 * https://github.com/codebrew/backbone-rails
+* http://ricostacruz.com/backbone-patterns/
+* http://adamjspooner.github.com/coffeescript-meet-backbonejs/

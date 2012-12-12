@@ -2,7 +2,7 @@ class RolesController < ApplicationController
 
   before_filter :authenticate_user!
 
-  respond_to :html, :json
+  respond_to :json
 
   def index
     @roles = Role.all
@@ -16,28 +16,12 @@ class RolesController < ApplicationController
     respond_with @role
   end
 
-  def new
-    @role = Role.new
-
-    respond_with(@role) do |format|
-      format.json { head :no_content }
-    end
-  end
-
-  def edit
-    @role = Role.find(params[:id])
-
-    respond_with(@role) do |format|
-      format.json { head :no_content }
-    end
-  end
-
   def create
     @role = Role.new(role_params)
 
     flash[:notice] = 'Role was successfully created.' if @role.save
 
-    respond_with @role, location: roles_url
+    respond_with @role, location: roles_path
   end
 
   def update

@@ -6,8 +6,8 @@ MDM::Application.routes.draw do
   put "configuration" => 'configuration#update'
 
   devise_for :users
-  resources :devices
-  resources :roles
+  resources :devices, only: [:index, :show, :create, :update, :destroy]
+  resources :roles, only: [:index, :show, :create, :update, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

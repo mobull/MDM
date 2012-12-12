@@ -2,7 +2,7 @@ class ConfigurationController < ApplicationController
 
   before_filter :authenticate_user!
 
-  respond_to :html, :json
+  respond_to :json
 
   def edit
     @configuration = ::Configuration.new
@@ -12,7 +12,7 @@ class ConfigurationController < ApplicationController
   def update
     configuration = ::Configuration.new
     flash[notice] = 'Configuration was successfully updated.' if configuration.update_attributes(configuration_params)
-    respond_with configuration, location: configuration_url
+    respond_with configuration, location: configuration_path
   end
 
   private

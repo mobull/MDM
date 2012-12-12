@@ -34,4 +34,8 @@ Please checkout [Mobull Wiki](https://github.com/mobull/playbook/wiki/).
 
 ### Faker
 
-http://rdoc.info/gems/faker/frames
+* http://rdoc.info/gems/faker/frames
+
+### Backbone Rails
+
+* https://github.com/codebrew/backbone-rails

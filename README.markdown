@@ -4,6 +4,10 @@ The project is currently under development.
 
 For issues / enhancement requests, please raise them [here](https://github.com/jassonsoft/MDM/issues).
 
+## Get Started
+
+Please checkout [Mobull Wiki](https://github.com/mobull/playbook/wiki/).
+
 ## Gems Used in This Project
 
 ### Devise

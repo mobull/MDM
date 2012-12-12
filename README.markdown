@@ -1,4 +1,4 @@
-# Jasson MDM
+# Mobull MDM
 
 The project is currently under development.
 

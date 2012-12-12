@@ -35,3 +35,5 @@ For issues / enhancement requests, please raise them [here](https://github.com/j
 ### Backbone Rails
 
 * https://github.com/codebrew/backbone-rails
+* http://ricostacruz.com/backbone-patterns/
+* http://adamjspooner.github.com/coffeescript-meet-backbonejs/

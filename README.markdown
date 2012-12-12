@@ -30,4 +30,8 @@ For issues / enhancement requests, please raise them [here](https://github.com/j
 
 ### Faker
 
-http://rdoc.info/gems/faker/frames
+* http://rdoc.info/gems/faker/frames
+
+### Backbone Rails
+
+* https://github.com/codebrew/backbone-rails

@@ -8,6 +8,7 @@ gem 'slim-rails'
 gem 'cancan'
 gem 'strong_parameters'
 gem 'formtastic'
+gem 'rails-backbone'
 
 group :development do
   gem 'guard-rspec'

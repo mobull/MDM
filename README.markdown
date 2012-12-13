@@ -6,7 +6,7 @@ For issues / enhancement requests, please raise them [here](https://github.com/j
 
 ## Get Started
 
-Please checkout [Mobull Wiki](https://github.com/mobull/playbook/wiki/).
+Please checkout [Mobull Wiki](https://github.com/mobull/playbook/).
 
 ## Dependencies
 

@@ -7,7 +7,6 @@ gem 'slim-rails'
 gem 'cancan'
 gem 'strong_parameters'
 gem 'rails-backbone'
-gem 'jasmine'
 
 group :development do
   gem 'guard-rspec'
@@ -26,6 +25,9 @@ group :test, :development do
   gem 'spork-rails'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'jasmine'
+  gem 'guard-jasmine'
+  gem 'jasminerice'
 end
 
 # Gems used only for assets and not required

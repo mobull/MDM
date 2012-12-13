@@ -4,7 +4,7 @@ html
     title MDM
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
-  body
+  body class=('nobg' unless @show_background)
     = render 'shared/flash_messages'
     = yield
     = javascript_include_tag "application"

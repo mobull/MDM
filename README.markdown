@@ -41,3 +41,8 @@ Please checkout [Mobull Wiki](https://github.com/mobull/playbook/wiki/).
 * https://github.com/codebrew/backbone-rails
 * http://ricostacruz.com/backbone-patterns/
 * http://adamjspooner.github.com/coffeescript-meet-backbonejs/
+
+### Jasmine
+
+* http://pivotal.github.com/jasmine/
+* https://github.com/pivotal/jasmine-gem

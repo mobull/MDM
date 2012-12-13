@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def privileges
     allowed_actions.collect(&:name).collect(&:to_sym).uniq
   end
+
+  # def to_s
+  #   name.blank? ? email : name
+  # end
 end

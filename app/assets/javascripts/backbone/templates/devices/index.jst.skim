@@ -1,0 +1,10 @@
+h1 Listing devices
+
+table#devices-table
+  tr
+    th Device Name
+
+br
+
+a href=#new
+  New Device

@@ -4,5 +4,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @show_background = true
+    @devices = Device.all
   end
 end

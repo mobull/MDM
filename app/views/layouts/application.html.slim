@@ -7,3 +7,4 @@ html
   body class=('nobg' unless @show_background)
     = yield
     = javascript_include_tag "application"
+    = yield :extra_javascripts

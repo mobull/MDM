@@ -53,6 +53,10 @@ Spork.prefork do
 
     # Devise Test Helpers
     config.include Devise::TestHelpers, type: :controller
+
+    config.before(:suite) do
+      `bundle exec rake db:test:prepare`
+    end
   end
 end
 

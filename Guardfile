@@ -12,6 +12,7 @@ guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAIL
   watch(%r{features/support/}) { :cucumber }
   watch(%r{lib/mdm/})
   watch('db/seeds.rb')
+  watch('db/schema.rb')
 end
 
 guard 'rspec', :cli => "--drb --color" do

@@ -3,7 +3,7 @@
 # Table name: global_variables
 #
 #  name       :string(255)      not null, primary key
-#  value      :text
+#  content    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -11,9 +11,9 @@
 class GlobalVariable < ActiveRecord::Base
   self.primary_key = :name
 
-  attr_accessible :name, :value
+  attr_accessible :name, :content
 
-  serialize :value
+  serialize :content
 
   ALLOWED_VARIABLES = %w(company_legal_name company_display_name help_desk_guide)
 
@@ -23,12 +23,12 @@ class GlobalVariable < ActiveRecord::Base
 
   ALLOWED_VARIABLES.each do |variable_name|
     define_singleton_method variable_name do
-      find_by_name(variable_name).try(:value)
+      find_by_name(variable_name).try(:content)
     end
 
-    define_singleton_method "#{variable_name}=" do |value|
-      variable = find_or_create_by_name(name: variable_name, value: value)
-      variable.update_attributes(value: value) unless variable.value == value
+    define_singleton_method "#{variable_name}=" do |content|
+      variable = find_or_create_by_name(name: variable_name, content: content)
+      variable.update_attributes(content: content) unless variable.content == content
     end
   end
 end

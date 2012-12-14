@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210083522) do
+ActiveRecord::Schema.define(:version => 20121214084000) do
 
   create_table "allowed_actions", :id => false, :force => true do |t|
     t.integer "role_id"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20121210083522) do
 
   create_table "global_variables", :id => false, :force => true do |t|
     t.string   "name",       :null => false
-    t.text     "value"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

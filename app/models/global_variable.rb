@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: global_variables
+#
+#  name       :string(255)      not null, primary key
+#  value      :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class GlobalVariable < ActiveRecord::Base
   self.primary_key = :name
 

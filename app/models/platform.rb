@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: platforms
+#
+#  identifier   :string(255)      primary key
+#  display_name :string(255)
+#
+
 class Platform < ActiveRecord::Base
   IDENTIFIER_DISPLAY_NAME_MAP = {
     ios: 'Apple iOS',

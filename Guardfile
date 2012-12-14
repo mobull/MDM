@@ -1,4 +1,5 @@
 # More info at https://github.com/guard/guard#readme
+require 'active_support/inflector'
 
 guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')
@@ -34,6 +35,9 @@ guard 'rspec', :cli => "--drb --color" do
   # Turnip features and steps
   watch(%r{^spec/acceptance/(.+)\.feature$})
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
+
+  # FactoryGirl
+  watch(%r{^spec/factories/(.+)\.rb$})                { |m| ["app/models/#{m[1].singularize}.rb", "spec/models/#{m[1].singularize}_spec.rb"] }
 end
 
 guard 'annotate' do

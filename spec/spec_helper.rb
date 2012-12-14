@@ -68,4 +68,5 @@ Spork.each_run do
     SimpleCov.start 'rails'
   end
 
+  FactoryGirl.reload
 end

@@ -9,7 +9,7 @@ FactoryGirl.define do
   factory :corporate_shared_ownership, parent: :device_ownership do
     name 'Corporate - Shared'
   end
-  factory :employee_owned, parent: :device_ownership do
+  factory :employee_owned_ownership, parent: :device_ownership do
     name 'Employee Owned'
   end
 end

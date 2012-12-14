@@ -11,5 +11,7 @@
 class DeviceOwnership < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
 
+  has_many :devices
 
+  validates :name, presence: true
 end

@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :device do
     user nil
     name "Marco's iPhone"
+    platform_identifier 'ios'
   end
 end

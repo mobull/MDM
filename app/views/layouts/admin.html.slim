@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title MDM
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'crown'
+    = csrf_meta_tags
+  body class=('nobg' if @hide_background)
+    #leftSide
+      = render 'layouts/left_nav'
+
+    #rightSide
+      .topNav
+        = render 'layouts/top_bar'
+      = yield
+      #footer
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'crown'

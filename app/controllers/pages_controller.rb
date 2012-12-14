@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
+  layout 'admin', only: [:dashboard]
 
   before_filter :authenticate_user!
 
   def dashboard
-    @show_background = true
+    
   end
 end

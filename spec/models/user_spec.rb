@@ -35,4 +35,22 @@ describe User do
       user.privileges.should match_array([:create_roles, :assign_role_to_user])
     end
   end
+
+  describe '#to_s' do
+    context 'when name is blank' do
+      it 'returns email address' do
+        [nil, '', '  '].each do |name|
+          user = FactoryGirl.create(:user, name: name)
+          user.to_s.should == user.email
+        end
+      end
+    end
+
+    context 'when name is not blank' do
+      it 'returns name' do
+        user = FactoryGirl.create(:user, name: 'Marco Y.')
+        user.to_s.should == 'Marco Y.'
+      end
+    end
+  end
 end

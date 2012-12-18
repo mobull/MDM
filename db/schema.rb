@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210083522) do
+ActiveRecord::Schema.define(:version => 20121217084626) do
 
   create_table "allowed_actions", :id => false, :force => true do |t|
     t.integer "role_id"
@@ -32,18 +32,28 @@ ActiveRecord::Schema.define(:version => 20121210083522) do
   add_index "contact_lines", ["category"], :name => "index_contact_lines_on_category"
   add_index "contact_lines", ["user_id"], :name => "index_contact_lines_on_user_id"
 
-  create_table "devices", :force => true do |t|
-    t.integer  "user_id"
+  create_table "device_ownerships", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+  create_table "devices", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "platform_identifier", :default => "ios", :null => false
+    t.integer  "device_ownership_id"
+  end
+
+  add_index "devices", ["device_ownership_id"], :name => "index_devices_on_device_ownership_id"
+  add_index "devices", ["platform_identifier"], :name => "index_devices_on_platform_identifier"
   add_index "devices", ["user_id"], :name => "index_devices_on_user_id"
 
   create_table "global_variables", :id => false, :force => true do |t|
     t.string   "name",       :null => false
-    t.text     "value"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -56,6 +66,21 @@ ActiveRecord::Schema.define(:version => 20121210083522) do
   end
 
   add_index "platforms", ["identifier"], :name => "index_platforms_on_identifier", :unique => true
+
+  create_table "profile_generator_ios_general_payload", :force => true do |t|
+    t.boolean  "HasRemovalPasscode"
+    t.boolean  "IsEncrypted"
+    t.string   "PayloadDescription"
+    t.string   "PayloadDisplayName"
+    t.boolean  "PayloadRemovalDisallowed"
+    t.string   "PayloadType",              :default => "Configuration", :null => false
+    t.integer  "PayloadVersion",           :default => 1,               :null => false
+    t.boolean  "PayloadScope"
+    t.date     "RemovalDate"
+    t.float    "DurationUntilRemoval"
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"

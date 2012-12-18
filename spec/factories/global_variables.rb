@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :company_legal_name, class: GlobalVariable do
     name 'company_legal_name'
-    value 'ACME Inc.'
+    content 'ACME Inc.'
   end
 end

@@ -20,16 +20,16 @@ describe Configuration do
     end
 
     describe "##{field}" do
-      it 'returns corresponding value in GlobalVariable' do
-        configuration.send(field).should == GlobalVariable.find_by_name(field).try(:value)
+      it 'returns corresponding content in GlobalVariable' do
+        configuration.send(field).should == GlobalVariable.find_by_name(field).try(:content)
       end
     end
 
     describe '#save' do
       before { configuration.send("#{field}=", random_string) }
-      it 'saves corresponding value into GlobalVariable' do
+      it 'saves corresponding content into GlobalVariable' do
         configuration.save
-        GlobalVariable.find_by_name(field).try(:value).should == random_string
+        GlobalVariable.find_by_name(field).try(:content).should == random_string
       end
     end
   end

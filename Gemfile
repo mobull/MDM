@@ -15,6 +15,7 @@ group :development do
   gem 'guard-spork'
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
+  gem 'guard-annotate'
 end
 
 group :test do

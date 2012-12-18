@@ -88,6 +88,6 @@ class DevicesController < ApplicationController
     # params.require(:person).permit(:name, :age)
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def device_params
-      params.require(:device).permit(:name, :user)
+      params.require(:device).permit(:name, :user_id)
     end
 end

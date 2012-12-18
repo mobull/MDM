@@ -51,3 +51,6 @@ coverage
 #### Remove Unwanted RSpec Tests
 spec/views/*
 spec/requests/*
+
+### Certs
+config/certs

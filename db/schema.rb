@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121214172705) do
+ActiveRecord::Schema.define(:version => 20121217084626) do
 
   create_table "allowed_actions", :id => false, :force => true do |t|
     t.integer "role_id"
@@ -66,6 +66,21 @@ ActiveRecord::Schema.define(:version => 20121214172705) do
   end
 
   add_index "platforms", ["identifier"], :name => "index_platforms_on_identifier", :unique => true
+
+  create_table "profile_generator_ios_general_payload", :force => true do |t|
+    t.boolean  "HasRemovalPasscode"
+    t.boolean  "IsEncrypted"
+    t.string   "PayloadDescription"
+    t.string   "PayloadDisplayName"
+    t.boolean  "PayloadRemovalDisallowed"
+    t.string   "PayloadType",              :default => "Configuration", :null => false
+    t.integer  "PayloadVersion",           :default => 1,               :null => false
+    t.boolean  "PayloadScope"
+    t.date     "RemovalDate"
+    t.float    "DurationUntilRemoval"
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"

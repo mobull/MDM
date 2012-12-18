@@ -1,12 +1,15 @@
-p#notice = notice
+= render 'title_area'
 
-p
-  strong User:
-  = @device.user
-p
-  strong Name:
-  = @device.name
+.wrapper
+  p#notice = notice
 
-= link_to 'Edit', edit_device_path(@device)
-'|
-= link_to 'Back', devices_path
+  p
+    strong User:
+    = @device.user
+  p
+    strong Name:
+    = @device.name
+
+  = link_to 'Edit', edit_device_path(@device)
+  '|
+  = link_to 'Back', devices_path

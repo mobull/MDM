@@ -17,5 +17,5 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/mdm
-//= require crown
+//  require crown
 //= require_tree .

@@ -1,4 +1,5 @@
 class DevicesController < ApplicationController
+  layout 'admin'
   # GET /devices
   # GET /devices.json
   def index

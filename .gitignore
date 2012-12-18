@@ -54,3 +54,7 @@ spec/requests/*
 
 ### Certs
 config/certs
+
+
+### DB Schema
+db/schema.rb

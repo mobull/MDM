@@ -19,4 +19,8 @@ class Device < ActiveRecord::Base
   belongs_to :device_ownership
 
   validates :platform_identifier, inclusion: { in: Platform::ALLOWED_IDENTIFIERS }
+
+  def to_s
+    name
+  end
 end

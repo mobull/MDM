@@ -6,6 +6,8 @@ describe Platform do
     android: 'Android',
   }
 
+  ALLOWED_IDENTIFIERS = IDENTIFIER_DISPLAY_NAME_MAP.keys.collect(&:to_s)
+
   it "has #{IDENTIFIER_DISPLAY_NAME_MAP.count} items" do
     Platform.should have(IDENTIFIER_DISPLAY_NAME_MAP.count).items
   end
@@ -26,6 +28,12 @@ describe Platform do
     end
   end
 
+  it 'rejects not allowed identifier' do
+    Faker::Lorem.words(5).each do |identifier|
+      Platform.new(identifier: identifier).should_not be_valid
+    end
+  end
+
   IDENTIFIER_DISPLAY_NAME_MAP.each do |identifier, display_name|
     describe ".#{identifier}" do
       context 'when record exists' do
@@ -39,6 +47,21 @@ describe Platform do
         it 'creates a new platform ' do
           expect { Platform.send(identifier) }.to change(Platform, :count).by(1)
         end
+      end
+    end
+  end
+
+  describe '#devices' do
+    before do
+      (0..10).to_a.sample.times do
+        FactoryGirl.create(:device, platform_identifier: ALLOWED_IDENTIFIERS.sample)
+      end
+    end
+
+    it 'returns associated devices' do
+      ALLOWED_IDENTIFIERS.each do |identifier|
+        platform = Platform.send(identifier)
+        platform.devices.should match_array(Device.where(platform_identifier: identifier))
       end
     end
   end

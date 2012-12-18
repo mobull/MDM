@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: contact_lines
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  category    :string(255)      not null
+#  content     :string(255)      not null
+#  description :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class ContactLine < ActiveRecord::Base
   belongs_to :user
   attr_accessible :category, :content, :description

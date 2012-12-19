@@ -53,4 +53,23 @@ describe User do
       end
     end
   end
+
+  describe '#groups' do
+    before do
+      @group_ids = []
+      (0..10).to_a.shuffle.each do |priority|
+        group = FactoryGirl.create(:group, priority: priority)
+        user.groups << group
+        @group_ids << group.id
+      end
+    end
+
+    it 'returns associated groups' do
+      user.groups.collect(&:id).should match_array(@group_ids)
+    end
+
+    it 'returns groups by the descent sequent of group priority' do
+      user.groups.map(&:priority).should == (0..10).to_a.reverse
+    end
+  end
 end

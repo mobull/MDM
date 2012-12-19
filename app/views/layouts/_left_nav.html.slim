@@ -28,3 +28,14 @@ ul#menu.nav
       li.last
         a href=(new_device_path) title=""
           | New
+  li.tables
+    a.exp.inactive href="#groups" title=""
+      span Groups
+      strong
+    ul.sub style="display: none;"
+      li
+        a href=(groups_path) title=""
+          | List
+      li.last
+        / a href=(new_groups_path) title=""
+          | New

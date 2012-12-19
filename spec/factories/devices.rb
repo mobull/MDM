@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :device do
     user nil
-    name "Marco's iPhone"
+    name { Faker::Lorem.words(3) }
     platform_identifier 'ios'
   end
 end

@@ -24,4 +24,16 @@ describe DeviceOwnership do
       device_ownership.devices.should match_array(Device.where(device_ownership_id: device_ownership.id))
     end
   end
+
+  describe '#to_s' do
+    it 'returns name' do
+      device_ownership.to_s.should == device_ownership.name
+    end
+  end
+
+  describe '#to_param' do
+    it 'returns id' do
+      device_ownership.to_param.should == device_ownership.id
+    end
+  end
 end

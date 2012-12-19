@@ -41,4 +41,5 @@ class User < ActiveRecord::Base
   def to_s
     name.blank? ? email : name
   end
+  alias_method :to_label, :to_s
 end

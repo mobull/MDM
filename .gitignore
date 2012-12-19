@@ -52,5 +52,8 @@ coverage
 spec/views/*
 spec/requests/*
 
-### Certs
+#### Certs
 config/certs
+
+#### DB Schema
+db/schema.rb

@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    if params[:id] == '0'
+    if params[:id] == 'all_members'
       @users = User.all
     else
       @group = Group.find(params[:id])

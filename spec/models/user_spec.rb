@@ -15,6 +15,8 @@ describe User do
     end
   end
 
+  pending 'adds users to group all members'
+
   describe '#roles' do
     before { user.roles << [role, another_role] }
 

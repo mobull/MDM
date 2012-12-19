@@ -1,0 +1,37 @@
+form.form
+  fieldset
+    .widget
+      .title
+        img.titleIcon src="/assets/crown/icons/dark/pencil.png"
+        h6 New Group
+
+
+      .formRow
+        label
+          | Select group:
+        .formRight
+          / TODO
+          .selector#uniform-undefined
+            span Select group
+            select name="select2"
+              option value="opt1" Select group
+              option value="opt2" Group 1
+              option value="opt3" Group 2
+          .clear
+      .formRow
+        label 
+          | Group name:
+        .formRight
+          input type="text"
+      .formRow
+        label 
+          | 优先级（填入数字）:
+        .formRight
+          input type="text"
+      .wizButtons
+        .status#status1
+        span.wNavButtons
+          input#back1 class='basic ui-wizard-content' value="Back" type="reset"
+          input#next1 class='blueB ml10 ui-wizard-content ui-forwizard-button' value="Submit" type="submit"
+        .clear
+          

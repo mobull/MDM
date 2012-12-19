@@ -26,11 +26,16 @@
         tr
           td Group 1
           td 3
+          /TODO
           td
             a herf="show" 显示
             '|
             a herf="#edit" 修改
             '|
             a herf="#destory" 移除
-  a herf="new"
-    |创建新组
+            / = link_to 'Show', group
+            / '  |
+            / = link_to 'Edit', edit_group_path
+            / '  |
+            / = link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete
+  = link_to 'New Group', new_group_path

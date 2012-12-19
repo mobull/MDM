@@ -4,38 +4,31 @@
   .widget
     .title
       img.titleIcon src="/assets/crown/icons/dark/frames.png"
-      h6 Group
+      h6 Groups
     table.sTable cellpadding="0" cellspacing="0" width="100%"
       thead
         tr
-          / TODO 按照层级来排序，而不是按照创建顺序。
           td.sortCol
             div
-              | 组名
+              | Name
               span
           td.sortCol
             div
-              | 层级数
+              | Priority
               span
           td.sortCol
             div
-              | 操作
+              | Operations
               span
       tbody
-        / TODO
+        = render partial: 'group', collection: @groups
+
+    table.sTable cellpadding="0" cellspacing="0" width="100%" style="border-top: 1px solid #CDCDCD;"
+      thead
         tr
-          td Group 1
-          td 3
-          /TODO
-          td
-            a herf="show" 显示
-            '|
-            a herf="#edit" 修改
-            '|
-            a herf="#destory" 移除
-            / = link_to 'Show', group
-            / '  |
-            / = link_to 'Edit', edit_group_path
-            / '  |
-            / = link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete
+          td Basic Group
+      tbody
+        tr
+          td = link_to 'All Members', group_path(0)
+
   = link_to 'New Group', new_group_path

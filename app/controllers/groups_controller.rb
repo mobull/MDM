@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   respond_to :html, :json
 
   def index 
-    @groups = Group.all
+    @groups = Group.higher_priority_first
   end
 
   # def show 

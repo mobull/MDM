@@ -21,6 +21,6 @@ class Device < ActiveRecord::Base
   validates :platform_identifier, inclusion: { in: Platform::ALLOWED_IDENTIFIERS }
 
   def to_s
-    name
+    name.blank? ? '(Untitled Device)' : name
   end
 end

@@ -15,6 +15,8 @@ class Group < ActiveRecord::Base
   validates :name, presence: true
   validate  :allowed_only_one_group_all_members
 
+  has_and_belongs_to_many :users
+
   def self.all_members
     find_or_create_by_should_include_everyone(should_include_everyone: true,
                                               name: 'All Members')

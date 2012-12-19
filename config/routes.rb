@@ -9,6 +9,7 @@ MDM::Application.routes.draw do
   resources :devices
   resources :roles
   resources :users, only: [:index]
+  resources :groups
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

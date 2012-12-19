@@ -6,53 +6,38 @@
 /   = f.actions do
 /     = f.action :submit
 
-form.form
+= form_for(@device, html: { class: 'form' } ) do |f|
   fieldset
     .widget
       .title
         img.titleIcon src="/assets/crown/icons/dark/list.png"
         h6 New Device
       .formRow
-        label User
+        = f.label :user
         .formRight
-          / TODO
-          select name='device[user_id]'
-            / TODO
-            option (Undefined)
-            option value="1" xmarco.info@gmail.com
-            option value="2" idavid.info@gmail.com
+          = f.select(:user_id, [['Undefined', nil]] | @users_array)
           a class='ml10' href="/" Create New User
         .clear
       .formRow
-        label Name
+        = f.label :name
         .formRight
-          / TODO
-          input type='text'
+          = f.text_field :name
         .clear
       .formRow
         label System
         .formRight
-          / TODO
-          input type='radio' checked='checked' name='radio1' id='radio1'
-            label for='radio1' IOS
-          input type='radio' name='radio1' id='radio2'
-            label for='radio2' Android
-          input type='radio' name='radio1' id='radio3'
-            label for='radio3' Blackberry 
+          - @platforms_array.each do |name, identifier|
+            = f.radio_button(:platform_identifier, identifier)
+            = f.label "platform_identifier_#{identifier}", name
         .clear
       .formRow
         label Privacy
         .formRight
-          input type='radio' checked='checked' name='radio2' id='radio4'
-          label for='radio1' Company-owned
-          input type='radio' name='radio2' id='radio5'
-          label for='radio2' Emplyee-owned
-          input type='radio' name='radio2' id='radio6'
-          label for='radio3' Company-shared
-          input type='radio' name='radio2' id='radio6'
+          - @device_ownerships_array.each do |name, id|
+            = f.radio_button(:device_ownership_id, id)
+            = f.label "device_ownership_id_#{id}", name
         .clear
       .formSubmit
-        / TODO
         input type='submit' value='submit' class='greenB ml10'
         input type='reset' value='Back' class='blueB ml10'
       .clear

@@ -18,4 +18,16 @@ describe Group do
       group.to_s.should == group.name
     end
   end
+
+  describe '.higher_priority_first' do
+    before do
+      (0..10).to_a.shuffle.each do |priority|
+        FactoryGirl.create(:group, priority: priority)
+      end
+    end
+
+    it 'returns an array by descent sequent of priority number' do
+      Group.higher_priority_first.map(&:priority).should == (0..10).to_a.reverse
+    end
+  end
 end

@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :group do
     name { Faker::Lorem.word }
+    priority 1
   end
 end

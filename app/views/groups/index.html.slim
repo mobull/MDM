@@ -1,0 +1,36 @@
+= render 'title_area'
+
+.wrapper
+  .widget
+    .title
+      img.titleIcon src="/assets/crown/icons/dark/frames.png"
+      h6 Group
+    table.sTable cellpadding="0" cellspacing="0" width="100%"
+      thead
+        tr
+          / TODO 按照层级来排序，而不是按照创建顺序。
+          td.sortCol
+            div
+              | 组名
+              span
+          td.sortCol
+            div
+              | 层级数
+              span
+          td.sortCol
+            div
+              | 操作
+              span
+      tbody
+        / TODO
+        tr
+          td Group 1
+          td 3
+          td
+            a herf="show" 显示
+            '|
+            a herf="#edit" 修改
+            '|
+            a herf="#destory" 移除
+  a herf="new"
+    |创建新组

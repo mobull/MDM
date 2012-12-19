@@ -22,12 +22,11 @@
                 span
         tbody
           - @devices.each do |device|
+            - user = device.user
             tr
               td = link_to device, device_path(device)
-              td = device.user
+              td = link_to user, user_path(user)
               td
-                = link_to 'Show', device
-                '  |
                 = link_to 'Edit', edit_device_path(device)
                 '  |
                 = link_to 'Destroy', device, :confirm => 'Are you sure?', :method => :delete

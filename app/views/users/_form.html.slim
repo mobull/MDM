@@ -1,0 +1,38 @@
+form
+  fieldset
+    .widget
+      .title
+        img.titleIcon src="/assets/crown/icons/dark/list.png"
+        h6 New User
+      .formRow
+        label 
+          |User name:
+        .formRight
+          input type="text"
+        .clear
+      .formRow
+        label 
+          |Email:
+        .formRight
+          input type="text"
+        .clear
+      .formRow
+        label for="tags" 
+          |Tags:
+        .formRight
+          input#tags.tags tyoe="text" name="tags" value="these,area,sample,tags" 
+          #tags_tagsinput.tagsinput 
+            span.tag
+              span
+                |"group 1"
+              a href="#" title="Removing tag"
+                |x
+            span.tag
+              span
+                |"group 2"
+              a href="#" title="Removing tag"
+                |x
+            #tags_addTag
+              input#tags_tag data-default="add a tag" style="color: rgb(0, 0, 0);width: 80px;"
+            .tags_clear
+          .clear

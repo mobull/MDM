@@ -29,4 +29,8 @@ class Platform < ActiveRecord::Base
       find_or_create_by_identifier(identifier: identifier.to_s, display_name: display_name)
     end
   end
+
+  def to_s
+    display_name
+  end
 end

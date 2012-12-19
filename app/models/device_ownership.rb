@@ -14,4 +14,12 @@ class DeviceOwnership < ActiveRecord::Base
   has_many :devices
 
   validates :name, presence: true
+
+  def to_s
+    name
+  end
+
+  def to_param
+    id
+  end
 end

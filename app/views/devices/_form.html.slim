@@ -6,20 +6,44 @@
 /   = f.actions do
 /     = f.action :submit
 
-form.form
+= form_for(@device, html: { class: 'form' } ) do |f|
   fieldset
     .widget
       .title
         img.titleIcon src="/assets/crown/icons/dark/list.png"
         h6 New Device
       .formRow
-        label User
+        = f.label :user
         .formRight
-          / TODO
-          select name='device[user_id]'
-            / TODO
-            option (Undefined)
-            option value="1" xmarco.info@gmail.com
-            option value="2" idavid.info@gmail.com
+          = f.select(:user_id, [['Undefined', nil]] | @users_array)
+          a class='ml10' href="/" Create New User
         .clear
+      .formRow
+        = f.label :name
+        .formRight
+          = f.text_field :name
+        .clear
+      .formRow
+        label System
+        .formRight
+          - @platforms_array.each do |name, identifier|
+            = f.radio_button(:platform_identifier, identifier)
+            = f.label "platform_identifier_#{identifier}", name
+        .clear
+      .formRow
+        label Privacy
+        .formRight
+          - @device_ownerships_array.each do |name, id|
+            = f.radio_button(:device_ownership_id, id)
+            = f.label "device_ownership_id_#{id}", name
+        .clear
+      .formSubmit
+        input type='submit' value='submit' class='greenB ml10'
+        input type='reset' value='Back' class='blueB ml10'
+      .clear
+
+
+
+
+
 

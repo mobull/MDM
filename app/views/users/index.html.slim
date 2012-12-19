@@ -1,0 +1,26 @@
+= render 'title_area'
+
+.wrapper
+  .widget
+    .title
+      img.titleIcon src="/assets/crown/icons/dark/frames.png"
+      h6 Users
+    table.sTable cellpadding="0" cellspacing="0" width="100%"
+      thead
+        tr
+          td.sortCol
+            div
+              |Email
+              span
+          td.sortCol 
+            div
+              | Name
+              span
+          td.sortCol
+            div
+              | Groups
+              span
+      tbody
+        = render partial: 'user', collection: @users
+
+/ = link to 'New User'

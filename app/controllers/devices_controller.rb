@@ -1,5 +1,9 @@
 class DevicesController < ApplicationController
   layout 'admin'
+
+  before_filter :authenticate_user!,
+                :form_helper_data
+
   # GET /devices
   # GET /devices.json
   def index
@@ -88,6 +92,12 @@ class DevicesController < ApplicationController
     # params.require(:person).permit(:name, :age)
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def device_params
-      params.require(:device).permit(:name, :user_id)
+      params.require(:device).permit(:name, :user_id, :device_ownership_id, :platform_identifier)
+    end
+
+    def form_helper_data
+      @users_array = User.all.map { |user| [user.to_s, user.id] }
+      @platforms_array = Platform.all.map { |platform| [platform.to_s, platform.identifier] }
+      @device_ownerships_array = DeviceOwnership.all.map { |ownership| [ownership.to_s, ownership.id] }
     end
 end

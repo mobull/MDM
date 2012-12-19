@@ -9,4 +9,7 @@ class UsersController < ApplicationController
     @users = User.all(include: :groups)
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
 end

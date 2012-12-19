@@ -8,7 +8,7 @@ MDM::Application.routes.draw do
   devise_for :users
   resources :devices
   resources :roles
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
   resources :groups
 
   # The priority is based upon order of creation:

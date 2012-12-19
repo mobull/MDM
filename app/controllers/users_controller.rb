@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   respond_to :html, :json
 
   def index
-    @users = User.all
+    @users = User.all(include: :groups)
   end
 
 end

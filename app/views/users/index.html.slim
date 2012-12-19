@@ -3,31 +3,24 @@
 .wrapper
   .widget
     .title
-      / img.titleIcon src="assets/crown/icons/drak/frames.png"
+      img.titleIcon src="/assets/crown/icons/dark/frames.png"
       h6 Users
     table.sTable cellpadding="0" cellspacing="0" width="100%"
       thead
         tr
+          td.sortCol
+            div
+              |Email
+              span
           td.sortCol 
-            div User Name
-            span
+            div
+              | Name
+              span
           td.sortCol
-            div Email
-            span
-          td.sortCol
-            div Groups
-            span
-          td.sortCol
-            div 设备归属
-            span
+            div
+              | Groups
+              span
       tbody
-        / To do ruby
-        tr
-          td 
-           a herf="/" Vincent
-          td wellber.wan@gmail.com
-          td 
-            |group 1
-          td 私有
+        = render partial: 'user', collection: @users
 
 / = link to 'New User'

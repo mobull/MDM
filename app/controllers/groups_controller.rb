@@ -9,9 +9,14 @@ class GroupsController < ApplicationController
     @groups = Group.higher_priority_first
   end
 
-  # def show 
-  #   @group = Group.find(params[:id])
-  # end
+  def show
+    if params[:id] == '0'
+      @users = User.all
+    else
+      @group = Group.find(params[:id])
+      @users = @group.users
+    end
+  end
 
   # def new 
   #   @group = Group.new

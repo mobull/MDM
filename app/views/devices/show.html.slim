@@ -1,37 +1,41 @@
 = render 'title_area'
 
 .statsRow
-  .controlB
-    ul
-      li
-        a href=""
-          img src='/assets/crown/icons/control/32/administrative-docs.png'
-          span Clear Passcode
-      li
-        a href=""
-          img src='/assets/crown/icons/control/32/lock.png'
-          span Lock Device
-      li
-        a href="/"
-          img src='/assets/crown/icons/control/32/edit.png'
-          span Enterprise Wipe       
-      li
-        a href="/"
-          img src='/assets/crown/icons/control/32/config.png'
-          span Device Wipe          
-      li
-        a href="/"
-          img src='/assets/crown/icons/control/32/networking.png'
-          span Remote Views
-
-      li
-        a href="/"
-          img src='/assets/crown/icons/control/32/refresh.png'
-          span Sync Device
-    .clear
+  .wrapper
+    .controlB
+      ul
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/administrative-docs.png'
+            span Clear Passcode
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/lock.png'
+            span Lock Device
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/edit.png'
+            span Enterprise Wipe       
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/config.png'
+            span Device Wipe          
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/networking.png'
+            span Remote Views
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/refresh.png'
+            span Sync Device
+        .clear
 .line
 .wrapper
-  p#notice = notice
+  / p#notice = notice
+  .nNote.nInformation.hideit
+    p
+      strong NOTE: 
+      |Your last login time is December 4th, 2012.
   .widget
     .title 
       h6 Device Information

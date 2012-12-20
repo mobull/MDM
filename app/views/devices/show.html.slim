@@ -69,8 +69,10 @@
           /     =@device.name
           li.mt10
             / TODO
-            strong Status:
-            p.pt0 Enterprise wipe pending
+            strong.ui-helper-clearfix Status:
+            img src='/assets/crown/icons/updateWarning.png'
+            span.pt0 
+                |  Enterprise wipe pendingimg
           li.mt10
             / TODO
             strong Last Seen
@@ -98,29 +100,51 @@
       .oneThree
         h3 Security
         ul
-          li 
+          li.mt10 
             |Compromised Detection
+            img.el-finder-stat src='/assets/crown/icons/updateNotice.png'
+          li.mt10 
+            |Data Protection
             img.el-finder-stat src='/assets/crown/icons/updateDone.png'
-          li Data Protection
-          li Block Level Encryption
-          li File Level Encryption
-        h3 Passcode
-        ul
-          li Passcode
-          li Passcode Compliance
-          li Passcode Profile Complicance
+          li.mt10 
+            |Block Level Encryption
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+          li.mt10 
+            |File Level Encryption
+            img.el-finder-stat src='/assets/crown/icons/updateWarning.png'
+        h3.mt20 Passcode
+        ul.mt10
+          li.mt10 
+            |Passcode
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+          li.mt10 
+            |Passcode Compliance
+            img.el-finder-stat src='/assets/crown/icons/updateWarning.png'
+          li.mt10 
+            |Passcode Profile Complicance
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
       .oneThree
         h3 Profiles
         ul
-          li 1 Installed
-          li 3 Not Installed
-        h3 Certificates
+          li.mt10 
+            |1 Installed
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+          li.mt10 
+            |3 Not Installed
+            img.el-finder-stat src='/assets/crown/icons/updateWarning.png'
+        h3.mt20 Certificates
         ul
-          li 1 Installed
-        h3 Apps
+          li.mt10 
+            |1 Installed
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+        h3.mt20 Apps
         ul
-          li 20 Installed
-          li 5 Not Installed
+          li.mt10 
+            |20 Installed
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+          li.mt10 
+            |5 Not Installed
+            img.el-finder-stat src='/assets/crown/icons/updateNotice.png'
       .clear
 
   / p

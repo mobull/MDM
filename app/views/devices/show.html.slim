@@ -1,41 +1,41 @@
 = render 'title_area'
 
+.statsRow
+  .controlB
+    ul
+      li
+        a href=""
+          img src='/assets/crown/icons/control/32/administrative-docs.png'
+          span Clear Passcode
+      li
+        a href=""
+          img src='/assets/crown/icons/control/32/lock.png'
+          span Lock Device
+      li
+        a href="/"
+          img src='/assets/crown/icons/control/32/edit.png'
+          span Enterprise Wipe       
+      li
+        a href="/"
+          img src='/assets/crown/icons/control/32/config.png'
+          span Device Wipe          
+      li
+        a href="/"
+          img src='/assets/crown/icons/control/32/networking.png'
+          span Remote Views
+
+      li
+        a href="/"
+          img src='/assets/crown/icons/control/32/refresh.png'
+          span Sync Device
+    .clear
+.line
 .wrapper
   p#notice = notice
   .widget
     .title 
       h6 Device Information
-    .statsRow
-      .controlB
-        ul
-          li
-            a href=""
-              img src='/assets/crown/icons/control/32/administrative-docs.png'
-              span Clear Passcode
-          li
-            a href=""
-              img src='/assets/crown/icons/control/32/lock.png'
-              span Lock Device
-          li
-            a href="/"
-              img src='/assets/crown/icons/control/32/edit.png'
-              span Enterprise Wipe       
-          li
-            a href="/"
-              img src='/assets/crown/icons/control/32/config.png'
-              span Device Wipe          
-          li
-            a href="/"
-              img src='/assets/crown/icons/control/32/networking.png'
-              span Remote Views
-
-          li
-            a href="/"
-              img src='/assets/crown/icons/control/32/refresh.png'
-              span Sync Device
-
-        .clear
-    .wrapper
+    .wrapper.pt10.pb10
       .oneThree
         ul.leftList
             li 
@@ -63,33 +63,33 @@
           /     / TODO
           /     strong
           /     =@device.name
-          li
+          li.mt10
             / TODO
-            strong.pt10 Status:
+            strong Status:
             p.pt0 Enterprise wipe pending
-          li
+          li.mt10
             / TODO
-            strong.pt10 Last Seen
+            strong Last Seen
             p.pt0 2012/12/12 18:30:20 
-          li
+          li.mt10
             / TODO
-            strong.pt10 OwnerShip
+            strong OwnerShip
             p.pt0 Corporate - Dedicated
-          li
+          li.mt10
             / TODO
-            strong.pt10 System
-            p.pt0 Corporate - Dedicated 
-          li
+            strong System
+            p.pt0 Android 
+          li.mt10
             / TODO
-            strong.pt10 Enrollment Date 
+            strong Enrollment Date 
             p.pt0 2012/12/01 09:10:20    
-          li
+          li.mt10
             / TODO
-            strong.pt10 UDID
+            strong UDID
             p.pt0 3622993830182874
-          li
+          li.mt10
             / TODO
-            strong.pt10 Serial Number
+            strong Serial Number
             p.pt0 3622993830182874     
       .oneThree
         h3 Security

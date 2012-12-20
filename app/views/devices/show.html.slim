@@ -2,13 +2,120 @@
 
 .wrapper
   p#notice = notice
+  .widget
+    .title 
+      h6 Device Information
+    .statsRow
+      .controlB
+        ul
+          li
+            a href=""
+              img src='/assets/crown/icons/control/32/lock.png'
+              span Clear Passcode
+          li
+            a href=""
+              img src='/assets/crown/icons/control/32/lock.png'
+              span Lock Device
+          li
+            a href="/"
+              img src='/assets/crown/icons/control/32/config.png'
+              span Enterprise Wipe       
+          li
+            a href="/"
+              img src='/assets/crown/icons/control/32/config.png'
+              span Device Wipe
+          li
+            a href="/"
+              img src='/assets/crown/icons/control/32/refresh.png'
+              span Sync Device
+        .clear
+    .wrapper
+      .oneThree
+        ul.leftList
+            li 
+              a.wUserPic href="/"
+                img src='/assets/crown/user.png'
 
-  p
-    strong User:
-    = @device.user
-  p
-    strong Name:
-    = @device.name
+              a href="/"
+                / TODO
+                strong 
+                =@device.user
+            li               
+              a href="/"
+                / TODO
+                strong 
+                =@device.name
+        .clear
+        ul.leftList
+          / li
+          /   a href="/"
+          /     / TODO
+          /     strong 
+          /     = @device.user
+          / li
+          /   a href="/"
+          /     / TODO
+          /     strong
+          /     =@device.name
+          li
+            / TODO
+            strong Status:
+            p Enterprise wipe pending
+          li
+            / TODO
+            strong Last Seen
+            p 2012/12/12 18:30:20       
+          li
+            a href="/"
+            / TODO
+            strong Enrollment Date 
+            p 2012/12/01 09:10:20    
+          li
+            / TODO
+            strong UDID
+            p 3622993830182874
+          li
+            / TODO
+            strong Serial Number
+            p 3622993830182874     
+      .oneThree
+        h3 Security
+        ul.leftList
+          li 
+            |Compromised Detection
+            img src='/assets/crown/icons/updateDone.png'
+          li Data Protection
+          li Block Level Encryption
+          li File Level Encryption
+        .clear
+        h3 Passcode
+        ul.leftList
+          li Passcode
+          li Passcode Compliance
+          li Passcode Profile Complicance
+      .oneThree
+        h3 Profiles
+        ul.leftList
+          li 1 Installed
+          li 3 Not Installed
+        .clear
+        h3 Certificates
+        ul.leftList
+          li 1 Installed
+        .clear
+        h3 Apps
+        .clear
+        ul.leftList
+          li 20 Installed
+          li 5 Not Installed
+      .clear
+
+  / p
+  /   strong User:
+  /   = @device.user
+  / p
+  /   strong Name:
+  /   = @device.name
 
   = link_to 'Edit', edit_device_path(@device)
   '|

@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
 
   respond_to :html, :json
 
-  def index 
+  def index
     @groups = Group.higher_priority_first
   end
 
@@ -18,11 +18,11 @@ class GroupsController < ApplicationController
     end
   end
 
-  # def new 
-  #   @group = Group.new
-  # end
+  def new
+    @group = Group.new
+  end
 
-  # def edit 
-  #   @group = Group.find(params[:id])
-  # end
+  def edit
+    @group = Group.find(params[:id])
+  end
 end

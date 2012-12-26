@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: allowed_actions
+#
+#  role_id :integer
+#  name    :string(255)
+#
+
 require 'spec_helper'
 
 describe AllowedAction do

@@ -5,7 +5,6 @@ MDM::Application.routes.draw do
   get "configuration" => 'configuration#edit'
   put "configuration" => 'configuration#update'
 
-  devise_for :users
   resources :devices
   resources :roles
   resources :users, only: [:index, :show]

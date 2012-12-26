@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  password_digest :string(255)      default(""), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  name            :string(255)
+#  bio             :text
+#  email           :string(255)
+#
+
 require 'spec_helper'
 
 describe User do

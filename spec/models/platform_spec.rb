@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: platforms
+#
+#  identifier   :string(255)      primary key
+#  display_name :string(255)
+#
+
 require 'spec_helper'
 
 describe Platform do

@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: global_variables
+#
+#  name       :string(255)      not null, primary key
+#  content    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe GlobalVariable do

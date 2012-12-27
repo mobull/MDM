@@ -1,0 +1,8 @@
+= form_tag(sessions_path) do
+  = label_tag('credential[login]', "Email:")
+  = text_field_tag('credential[login]')
+  br
+  = label_tag('credential[password]', "Password:")
+  = password_field_tag('credential[password]')
+  br
+  = submit_tag("Login")

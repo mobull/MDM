@@ -2,13 +2,17 @@ MDM::Application.routes.draw do
 
   get "pages/dashboard"
 
+  get 'signup', to: 'users#new',        as: 'signup'
+  get 'login',  to: 'sessions#new',     as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  resources :users
+  resources :sessions
+
   get "configuration" => 'configuration#edit'
   put "configuration" => 'configuration#update'
 
-  devise_for :users
   resources :devices
   resources :roles
-  resources :users, only: [:index, :show]
   resources :groups
   resources :profiles
 

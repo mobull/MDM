@@ -10,10 +10,6 @@ Please checkout [Mobull Wiki](https://github.com/mobull/playbook/).
 
 ## Gems Used in This Project
 
-### Devise
-
-* https://github.com/plataformatec/devise
-
 ### Slim
 
 * http://rdoc.info/github/stonean/slim

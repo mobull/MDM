@@ -85,4 +85,36 @@ describe User do
       user.groups.map(&:priority).should == (0..10).to_a.reverse
     end
   end
+
+  describe '.find_by_login(login)' do
+    context 'when login param is email' do
+      context 'when email exists' do
+        before { user }
+        it 'returns the user' do
+          User.find_by_login(user.email).should == user
+        end
+      end
+
+      context 'when email does not exist' do
+        it 'returns nil' do
+          User.find_by_login('email@example.com').should be_nil
+        end
+      end
+    end
+  end
+
+  describe '.authenticate(username_and_password_hash)' do
+    before { user }
+    context 'when login credential is valid' do
+      it 'returns the user' do
+        User.authenticate(login: user.email, password: 'password').should == user
+      end
+    end
+
+    context 'when login credential is invalid' do
+      it 'returns false' do
+        User.authenticate(login: user.email, password: 'invalid_password').should be_false
+      end
+    end
+  end
 end

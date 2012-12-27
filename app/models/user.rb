@@ -28,4 +28,13 @@ class User < ActiveRecord::Base
     name.blank? ? email : name
   end
   alias_method :to_label, :to_s
+
+  def self.find_by_login(login)
+    find_by_email(login)
+  end
+
+  def self.authenticate(username_and_password_hash)
+    user = find_by_login(username_and_password_hash[:login])
+    user && user.authenticate(username_and_password_hash[:password])
+  end
 end

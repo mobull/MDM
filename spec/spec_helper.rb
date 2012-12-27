@@ -51,6 +51,8 @@ Spork.prefork do
     #     --seed 1234
     config.order = "random"
 
+    config.include Authentication::TestHelpers, type: :controller
+
     config.before(:suite) do
       `bundle exec rake db:test:prepare`
     end

@@ -1,0 +1,73 @@
+.wrapper
+  .widdget
+    .profile_div1
+      .title
+        / img.titleIcon src="/asset/crown/icons/control/administrative-docs.png"
+        h6 
+          | Wi-Fi
+      .formRow
+        a.wButton.blueB.ml15.m10 href="#"
+          span 
+            | Configure
+    .profile_div2
+      .title
+        h6 
+          | Wi-Fi
+      .formRow
+        label
+          | Service Set Identifier
+          span.req
+            | *
+        .formRight
+          input.ui-wizard-content type="text" name="bazinga"
+        .clear
+      .formRow
+        label
+          | Hidden Network
+        .formRight
+          input#check1 type="checkbox" checked="checked" name="check1"
+        .clear
+      .formRow
+        label
+          | Auto-Join
+        .formRight
+          input#check1 type="checkbox" checked="checked" name="check1"
+        .clear
+      .formRow
+        label 
+          | Security Type
+        .formRight
+          /TODO 
+          select name="select2"
+            option value="opt1"
+              | None
+            option value="opt2"
+              | WEP
+            option value="opt3"
+              | WPA/WPA2
+            option value="opt4"
+              | Any(Personal)
+            option value="opt5"
+              | WEP Enterprise
+            option value="opt6"
+              | WPA/WPA2 Enterprise
+            option value="opt7"
+              | Any(Enterprise)
+      .formRow
+        label
+          | Password
+        .formRight
+          input#pw type="password" name="pw"
+        .clear
+      .formRow
+        label 
+          | Proxy Type
+        .formRight
+          /TODO
+          select name="select2"
+            option value="opt1"
+              | None
+            option value="opt2"
+              | Manual
+            option value="opt3"
+              | Auto

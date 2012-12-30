@@ -15,7 +15,7 @@ ul#menu.nav
         a href=(users_path) title=""
           | List
       li.last
-        a href="#users/new" title=""
+        a href="users/new" title=""
           | New
   li.tables
     a.exp.inactive href="#devices" title=""
@@ -37,5 +37,13 @@ ul#menu.nav
         a href=(groups_path) title=""
           | List
       li.last
-        / a href=(new_groups_path) title=""
+        a href=(new_group_path) title=""
           | New
+  li.tables
+    a.exp.inactive href="#profiles" title=""
+      span Profiles
+      strong
+    ul.sub style="display: none;"
+      li
+        a href=(profiles_path) title=""
+          | LIst

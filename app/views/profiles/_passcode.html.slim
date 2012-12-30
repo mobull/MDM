@@ -1,0 +1,96 @@
+.wrapper
+  .widdget
+    .profile_div1
+      .title
+        img.titleIcon src="/asset/crown/icons/control/administrative-docs.png"
+        h6 Passcode
+      .formRow
+        p
+          | Use this section to specify passcode policies.(Users will not be able to modify these settings on their devices once the configuration profile is installed.)
+        a.wButton.blueB.ml15.m10 href="#"
+          span 
+            | Configure
+    .profile_div2
+      .title
+        h6 Passcode
+      .formRow
+        label 
+          | Allow simple value
+        .formRight
+          input#check1 name="check1" checked="checked" type="checkbox"
+        .clear
+      .formRow
+        label 
+          | Require alphanumeric value
+        .formRight
+          input#check1 name="check1" checked="checked" type="checkbox"
+        .clear
+      .formROw
+        label
+          | Minemum passcode lenth
+        .formRight
+          select name="select2"
+            / TODO opt1~opt16
+            option value="opt1" 0
+            option value="opt2" 1
+        .clear
+      .formROw
+        label
+          | Minemum number of complex characters
+        .formRight
+          select name="select2"
+            / TODO opt1~opt4
+            option value="opt1" 0
+            option value="opt2" 1
+        .clear
+      .formRow
+        label
+          | Maximum passcode age(1-730 days,or none) 
+        .formRight
+          ul#sInline
+            / TODO li 1~730
+            li 
+            li 1
+            li 2
+        .clear
+      .formROw
+        label
+          | Auto-lock(1-5 minutes,or none)
+        .formRight
+          select name="select2"
+            / TODO opt 1 minute ~ 5minutes
+            option value="opt1" Never
+            option value="opt2" 
+              | 1 minute
+        .clear
+      .formRow
+        label
+          | Passcode history(1-50 passcodes,or none) 
+        .formRight
+          ul#sInline
+            / TODO li 1~50
+            li 
+            li 1
+            li 2
+        .clear
+      .formROw
+        label
+          | Grace period for device lock
+        .formRight
+          select name="select2"
+            / TODO opt 1 minute,5 minutes,15 minutes,1 hour,4 hours
+            option value="opt1" None
+            option value="opt2" 
+              | 1 minute
+        .clear
+      .formROw
+        label
+          | Maximum number of failed attempts
+        .formRight
+          select name="select2"
+            / TODO opt 2~10
+            option value="opt1" 2
+            option value="opt2" 
+              | 3
+        .clear
+= javasript_

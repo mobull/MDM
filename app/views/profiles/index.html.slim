@@ -1,0 +1,83 @@
+= render 'title_area'
+
+.wrapper
+  .widget
+    .title
+      img.titleIcon src="/assets/crown/icons/dark/full2.png"
+      h6 User profile
+    /TODO
+    .formRow
+      label 
+        | Status:
+      .formRight
+        select name="select2" 
+          option value="opt1" All
+          option value="opt2" Active
+          option value="opt3" Inactive
+      .clear
+    .formRow
+      label 
+        | Publish:
+      .formRight
+        select name="select2" 
+          option value="opt1" All
+          option value="opt2" Publish
+          option value="opt3" Unpublish
+      .clear
+    .formRow
+      label 
+        | Platform
+      .formRight
+        select name="select2" 
+          option value="opt1" Any
+          option value="opt2" Android
+          option value="opt3" Apple iOS
+      .clear
+    table.sTable cellpadding="0" cellspacing="0" width="100%"
+      thead
+        tr
+          / TODO 打钩下面显示active标签的数据，没打钩就显示inactive
+          td.sortCol
+            div
+              | Active
+              span
+          td.sortCol
+            div
+              | Profile Name
+              span
+          td.sortCol
+            div
+              | Type
+              span
+          td.sortCol
+            div
+              | Platform
+              span
+          td.sortCol
+            div
+              | Managed By
+              span
+          td
+            div
+              | Actions
+      /TODO
+      tbody
+        tr
+          td
+            | Active
+          td
+            | Iron Man
+          td 
+            | Auto
+          td
+            | Apple iOS
+          td
+            | All members
+          td
+            a href="#edit" Edit
+            '|
+            a href="#destory" Destory
+
+  = link_to 'Add', new_profile_path
+
+

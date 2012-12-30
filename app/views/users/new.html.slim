@@ -1,0 +1,14 @@
+= render 'title_area'
+
+.wrapper
+  .widget
+    = semantic_form_for @user do |f|
+
+      = f.input :name
+      = f.input :email
+      = f.input :bio
+
+      = f.input :password
+      = f.input :password_confirmation
+
+      = f.action :submit

@@ -14,6 +14,7 @@ MDM::Application.routes.draw do
   resources :devices
   resources :roles
   resources :groups
+  resources :profiles
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

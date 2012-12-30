@@ -7,4 +7,4 @@ tr
     ul
       - user.groups.each do |group|
         li = link_to group, group_path(group)
-      li = link_to 'All Members', group_path(0)
+      li = link_to 'All Members', group_path('all_members')

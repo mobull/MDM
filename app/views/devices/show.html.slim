@@ -1,14 +1,158 @@
 = render 'title_area'
 
+.statsRow
+  .wrapper
+    .controlB
+      ul
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/administrative-docs.png'
+            span Clear Passcode
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/lock.png'
+            span Lock Device
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/edit.png'
+            span Enterprise Wipe       
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/config.png'
+            span Device Wipe          
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/networking.png'
+            span Remote Views
+        li
+          a href="/"
+            img src='/assets/crown/icons/control/32/refresh.png'
+            span Sync Device
+        .clear
+.line
 .wrapper
-  p#notice = notice
+  / p#notice = notice
+  .nNote.nInformation.hideit
+    p
+      strong NOTE: 
+      |Your last login time is December 12th, 2012.
+  .widget
+    .title 
+      h6 Device Information
+    .wrapper.pt10.pb10
+      .oneThree
+        ul
+            li 
+              a.wUserPic href="/"
+                img src='/assets/crown/user.png'
 
-  p
-    strong User:
-    = @device.user
-  p
-    strong Name:
-    = @device.name
+              a href="/"
+                / TODO
+                strong 
+                =@device.user
+            li               
+              a href="/"
+                / TODO
+                strong 
+                =@device.name
+        .clear
+        ul
+          / li
+          /   a href="/"
+          /     / TODO
+          /     strong 
+          /     = @device.user
+          / li
+          /   a href="/"
+          /     / TODO
+          /     strong
+          /     =@device.name
+          li.mt10
+            / TODO
+            strong.ui-helper-clearfix Status:
+            img src='/assets/crown/icons/updateWarning.png'
+            span.pt0 
+                |  Enterprise wipe pendingimg
+          li.mt10
+            / TODO
+            strong Last Seen
+            p.pt0 2012/12/12 18:30:20 
+          li.mt10
+            / TODO
+            strong OwnerShip
+            p.pt0 Corporate - Dedicated
+          li.mt10
+            / TODO
+            strong System
+            p.pt0 Android 
+          li.mt10
+            / TODO
+            strong Enrollment Date 
+            p.pt0 2012/12/01 09:10:20    
+          li.mt10
+            / TODO
+            strong UDID
+            p.pt0 3622993830182874
+          li.mt10
+            / TODO
+            strong Serial Number
+            p.pt0 3622993830182874     
+      .oneThree
+        h3 Security
+        ul
+          li.mt10 
+            |Compromised Detection
+            img.el-finder-stat src='/assets/crown/icons/updateNotice.png'
+          li.mt10 
+            |Data Protection
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+          li.mt10 
+            |Block Level Encryption
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+          li.mt10 
+            |File Level Encryption
+            img.el-finder-stat src='/assets/crown/icons/updateWarning.png'
+        h3.mt20 Passcode
+        ul.mt10
+          li.mt10 
+            |Passcode
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+          li.mt10 
+            |Passcode Compliance
+            img.el-finder-stat src='/assets/crown/icons/updateWarning.png'
+          li.mt10 
+            |Passcode Profile Complicance
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+      .oneThree
+        h3 Profiles
+        ul
+          li.mt10 
+            |1 Installed
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+          li.mt10 
+            |3 Not Installed
+            img.el-finder-stat src='/assets/crown/icons/updateWarning.png'
+        h3.mt20 Certificates
+        ul
+          li.mt10 
+            |1 Installed
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+        h3.mt20 Apps
+        ul
+          li.mt10 
+            |20 Installed
+            img.el-finder-stat src='/assets/crown/icons/updateDone.png'
+          li.mt10 
+            |5 Not Installed
+            img.el-finder-stat src='/assets/crown/icons/updateNotice.png'
+      .clear
+
+  / p
+  /   strong User:
+  /   = @device.user
+  / p
+  /   strong Name:
+  /   = @device.name
 
   = link_to 'Edit', edit_device_path(@device)
   '|

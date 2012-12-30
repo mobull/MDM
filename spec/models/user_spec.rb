@@ -24,8 +24,32 @@ describe User do
 
   it 'rejects short password (length < 6)' do
     (0..5).each do |i|
-      FactoryGirl.build(:user, password: 'x' * i).should_not be_valid
+      password = 'x' * i
+      FactoryGirl.build(:user, password: password, password_confirmation: password).should_not be_valid
     end
+  end
+
+  it 'rejects unmatched password_confirmation' do
+    FactoryGirl.build(:user, password: 'password', password_confirmation: 'another_password').should_not be_valid
+  end
+
+  it 'rejects blank email' do
+    [nil, '', '   '].each { |email| FactoryGirl.build(:user, email: email).should_not be_valid }
+  end
+
+  it 'rejects duplicated email' do
+    FactoryGirl.build(:user, email: user.email).should_not be_valid
+  end
+
+  it 'rejects invalid email format' do
+    %w(user@foo,com user_at_foo.org example.user@foo. foo@bar_baz.com foo@bar+baz.com).each do |invalid_email|
+      FactoryGirl.build(:user, email: invalid_email).should_not be_valid
+    end
+  end
+
+  it 'alters email address to down case' do
+    user = FactoryGirl.create(:user, email: 'XMARCO.INFO@GMAIL.COM')
+    user.email.should == 'xmarco.info@gmail.com'
   end
 
   describe '#roles' do

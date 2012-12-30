@@ -20,6 +20,13 @@ class User < ActiveRecord::Base
   has_many :allowed_actions, through: :roles
   has_and_belongs_to_many :groups, order: 'priority DESC'
 
+  validates :password, length: { minimum: 6 }
+  validates :email, presence: true,
+                    uniqueness: { case_senstive: false },
+                    format: { with: String::VALID_EMAIL_REGEX, message: 'Invalid email format.' }
+
+  before_save :downcase_email
+
   def privileges
     allowed_actions.collect(&:name).collect(&:to_sym).uniq
   end
@@ -37,4 +44,10 @@ class User < ActiveRecord::Base
     user = find_by_login(username_and_password_hash[:login])
     user && user.authenticate(username_and_password_hash[:password])
   end
+
+  private
+
+    def downcase_email
+      self.email.downcase!
+    end
 end

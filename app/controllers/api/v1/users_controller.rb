@@ -15,11 +15,17 @@ module Api
       end
 
       def create
-        @user = User.new(user_params)
+        user = User.new(user_params)
+        user.save
 
-        flash[:notice] = 'User was successfully created.' if @user.save
+        respond_with user, location: users_path
+      end
 
-        respond_with @user, location: users_path
+      def update
+        user = User.find(params[:id])
+        user.update_attributes(user_params)
+
+        respond_with user
       end
 
       private

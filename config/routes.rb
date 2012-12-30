@@ -2,19 +2,16 @@ MDM::Application.routes.draw do
 
   get "pages/panel"
 
-  get 'signup', to: 'users#new',        as: 'signup'
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  resources :sessions
 
   namespace :api do
     namespace :v1 do
-      resources :users
+      resources :users, only: [:index, :show, :create, :update]
       resources :devices
       resources :roles
       resources :groups
       resources :profiles
-      get "configuration" => 'configuration#edit'
       put "configuration" => 'configuration#update'
     end
   end

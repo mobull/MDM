@@ -51,8 +51,11 @@ Spork.prefork do
     #     --seed 1234
     config.order = "random"
 
-    # Devise Test Helpers
-    config.include Devise::TestHelpers, type: :controller
+    config.include Authentication::TestHelpers, type: :controller
+
+    config.before(:suite) do
+      `bundle exec rake db:test:prepare`
+    end
   end
 end
 
@@ -64,4 +67,5 @@ Spork.each_run do
     SimpleCov.start 'rails'
   end
 
+  FactoryGirl.reload
 end

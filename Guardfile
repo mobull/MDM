@@ -1,4 +1,5 @@
 # More info at https://github.com/guard/guard#readme
+require 'active_support/inflector'
 
 guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')
@@ -12,6 +13,7 @@ guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAIL
   watch(%r{features/support/}) { :cucumber }
   watch(%r{lib/mdm/})
   watch('db/seeds.rb')
+  watch('db/schema.rb')
 end
 
 guard 'rspec', :cli => "--drb --color" do
@@ -33,6 +35,21 @@ guard 'rspec', :cli => "--drb --color" do
   # Turnip features and steps
   watch(%r{^spec/acceptance/(.+)\.feature$})
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
+
+  # FactoryGirl
+  watch(%r{^spec/factories/(.+)\.rb$})                { |m| ["app/models/#{m[1].singularize}.rb", "spec/models/#{m[1].singularize}_spec.rb"] }
+end
+
+guard 'annotate' do
+  watch( 'db/schema.rb' )
+
+  # Uncomment the following line if you also want to run annotate anytime
+  # a model file changes
+  #watch( 'app/models/**/*.rb' )
+
+  # Uncomment the following line if you are running routes annotation
+  # with the ":routes => true" option
+  #watch( 'config/routes.rb' )
 end
 
 guard :jasmine do

@@ -1,13 +1,20 @@
 MDM::Application.routes.draw do
 
-  get "pages/dashboard"
+  get "pages/panel"
+
+  get 'signup', to: 'users#new',        as: 'signup'
+  get 'login',  to: 'sessions#new',     as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  resources :users
+  resources :sessions
 
   get "configuration" => 'configuration#edit'
   put "configuration" => 'configuration#update'
 
-  devise_for :users
-  resources :devices, only: [:index, :show, :create, :update, :destroy]
-  resources :roles, only: [:index, :show, :create, :update, :destroy]
+  resources :devices
+  resources :roles
+  resources :groups
+  resources :profiles
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +65,7 @@ MDM::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'pages#dashboard'
+  root :to => 'pages#panel'
 
   # See how all your routes lay out with "rake routes"
 

@@ -51,3 +51,9 @@ coverage
 #### Remove Unwanted RSpec Tests
 spec/views/*
 spec/requests/*
+
+#### Certs
+config/certs
+
+#### DB Schema
+db/schema.rb

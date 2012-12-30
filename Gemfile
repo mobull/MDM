@@ -2,18 +2,18 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 gem 'jquery-rails'
-gem 'devise'
 gem 'slim-rails'
 gem 'cancan'
 gem 'strong_parameters'
 gem 'rails-backbone'
-gem 'formtastic'
+gem 'bcrypt-ruby'
 
 group :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
+  gem 'guard-annotate'
 end
 
 group :test do

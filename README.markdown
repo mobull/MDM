@@ -2,7 +2,7 @@
 
 The project is currently under development.
 
-For issues / enhancement requests, please raise them [here](https://github.com/jassonsoft/MDM/issues).
+For issues / enhancement requests, please raise them [here](https://github.com/mobull/MDM/issues).
 
 ## Get Started
 
@@ -41,10 +41,6 @@ You can also build it from source for several other operating systems, please co
 [PhantomJS build instructions](http://code.google.com/p/phantomjs/wiki/BuildInstructions).
 
 ## Gems Used in This Project
-
-### Devise
-
-* https://github.com/plataformatec/devise
 
 ### Slim
 

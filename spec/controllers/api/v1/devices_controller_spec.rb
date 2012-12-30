@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe DevicesController do
+describe Api::V1::DevicesController do
 
   describe "GET index" do
 

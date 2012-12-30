@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RolesController do
+describe Api::V1::RolesController do
 
   let(:user) { FactoryGirl.create(:user) }
   let(:role) { FactoryGirl.create(:role) }

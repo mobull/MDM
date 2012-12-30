@@ -75,3 +75,7 @@ You can also build it from source for several other operating systems, please co
 * http://pivotal.github.com/jasmine/
 * https://github.com/pivotal/jasmine-gem
 * https://github.com/guard/guard-jasmine
+
+### Jbuilder
+
+* https://github.com/rails/jbuilder

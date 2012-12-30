@@ -6,6 +6,7 @@ gem 'slim-rails'
 gem 'cancan'
 gem 'strong_parameters'
 gem 'rails-backbone'
+gem 'jbuilder'
 gem 'bcrypt-ruby'
 
 group :development do
@@ -43,9 +44,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'skim'
 end
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
 
 # Use unicorn as the app server
 # gem 'unicorn'

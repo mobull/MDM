@@ -4,7 +4,13 @@ class MDM.Views.Users.IndexView extends Backbone.View
   template: JST["backbone/templates/users/index"]
 
   initialize: () ->
-    @options.users.bind('reset', @addAll)
+    @userIndexView = new UserIndexView();
+    @options.users.bind('reset', @addAll, this);
+    @options.users.bind('all', @render, this);
+    @options.users.fetch slicent: true, success: (collection, response) ->
+      if response?
+        collection.reset(response.user)
+      else userIndexView.render();
 
   addAll: () =>
     @options.users.each(@addOne)
@@ -19,28 +25,4 @@ class MDM.Views.Users.IndexView extends Backbone.View
 
     return this
 
-# class UserListView extends Backbon.View
-#   template: JST["backbone/templates/users/index"]
 
-#   el: ('#users-table')
-
-#   initialize: () ->
-#     @userList = new MDM.Collections.UsersCollection();
-#     @userList.bind('reset', this.addAll, this);
-#     @userList.bind('all', this.render, this);
-#     @userList.fetch slicent: true, success: (collection, response) ->
-#       if response inst null
-#         collection.reset(response.user);
-#       else userListView.render();
-
-#   render: =>
-#     @$el.html()
-
-#   addAll: =>
-#     @userList.each(@addOne)
-
-#   addOne: =>
-#     view = new UsersView({model : users})
-#     @$("tbody").append(view.render().el)
-
-# userListView = new userListView();

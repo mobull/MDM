@@ -8,7 +8,6 @@ gem 'strong_parameters'
 gem 'rails-backbone'
 gem 'jbuilder'
 gem 'bcrypt-ruby'
-gem 'backbone-on-rails'
 
 group :development do
   gem 'guard-rspec'

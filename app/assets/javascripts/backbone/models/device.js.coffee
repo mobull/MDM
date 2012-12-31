@@ -7,4 +7,4 @@ class MDM.Models.Device extends Backbone.Model
 
 class MDM.Collections.DevicesCollection extends Backbone.Collection
   model: MDM.Models.Device
-  url: '/devices'
+  url: '/api/v1/devices'

@@ -4,11 +4,11 @@ class MDM.Routers.UsersRouter extends Backbone.Router
     @users.reset options.users
 
   routes:
-    "new"      : "newUsers"
-    "index"    : "index"
-    ":id/edit" : "edit"
-    ":id"      : "show"
-    ".*"        : "index"
+    "users/new"      : "newUsers"
+    "users/index"    : "index"
+    "users/:id/edit" : "edit"
+    "users/:id"      : "show"
+    "users./*"       : "index"
 
   newUsers: ->
     @view = new MDM.Views.Users.NewView(collection: @users)

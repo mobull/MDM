@@ -15,10 +15,10 @@ module Api
       end
 
       def create
-        user = User.new(user_params)
-        user.save
+        @user = User.new(user_params)
+        @user.save
 
-        respond_with user, location: users_path
+        render 'show'
       end
 
       def update

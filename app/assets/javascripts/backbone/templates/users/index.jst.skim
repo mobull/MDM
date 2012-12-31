@@ -1,13 +1,12 @@
-<h1>Listing users</h1>
+h1 Listing users
 
-<table id="users-table">
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-</table>
+table#users-table
+  tr
+    th User Name
+    th
+    th
 
-<br/>
+br
 
-<a href="#/new">New Users</a>
+a href="#/new"
+	|	New Users

@@ -1,10 +1,8 @@
-<h1>Edit user</h1>
+h1 Edit user
 
-<form id="edit-user" name="user">
-  <div class="actions">
-    <input type="submit" value="Update Users" />
-  </div>
+form#edit-user name="user"
+  .actions
+    input type="submit" value="Update Users" 
 
-</form>
-
-<a href="#/index">Back</a>
+a href="#/index" 
+  | Back

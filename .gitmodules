@@ -1,0 +1,3 @@
+[submodule "vendor/assets/javascripts/backbone-forms"]
+	path = vendor/assets/javascripts/backbone-forms
+	url = git@github.com:powmedia/backbone-forms.git

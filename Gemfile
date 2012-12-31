@@ -2,12 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 gem 'jquery-rails'
+gem 'bcrypt-ruby'
 gem 'slim-rails'
 gem 'cancan'
 gem 'strong_parameters'
-gem 'rails-backbone'
+
 gem 'jbuilder'
-gem 'bcrypt-ruby'
+gem 'rails-backbone'
 
 group :development do
   gem 'guard-rspec'

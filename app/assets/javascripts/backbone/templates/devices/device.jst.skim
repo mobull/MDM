@@ -1,9 +1,13 @@
 td
-  a href="#/#{ @id }"
+  = @name
+td
+  = @user
+td
+  a href="#devices/#{ @id }"
     | Show
-td
-  a href="#/#{ @id }/edit"
+  '  | 
+  a href="#devices/#{ @id }/edit"
     | Edit
-td
-  a.destroy hre="#/#{ @id }/destroy"
+  '  | 
+  a href="#devices/#{ @id }/destroy"
     | Destroy

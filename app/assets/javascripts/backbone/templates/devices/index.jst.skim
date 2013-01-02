@@ -3,8 +3,9 @@ h1 Listing devices
 table#devices-table
   tr
     th Device Name
-
+    th Owner
+    th Operations
 br
 
-a href=#new
+a href='devices#new'
   New Device

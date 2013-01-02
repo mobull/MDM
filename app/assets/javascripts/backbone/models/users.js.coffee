@@ -3,7 +3,7 @@ class MDM.Models.Users extends Backbone.Model
 
   defaults:
   	'name': '(Untitled User)'
-  	'email': 'String'
+  	'email': null
 
 class MDM.Collections.UsersCollection extends Backbone.Collection
   model: MDM.Models.Users

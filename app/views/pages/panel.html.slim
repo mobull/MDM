@@ -2,5 +2,6 @@ div#container
 
 = content_for :extra_javascripts do
   javascript:
-    window.devicesRouter = new MDM.Routers.DevicesRouter({ devices: #{Device.all.to_json.html_safe} });
+    window.devicesRouter = new MDM.Routers.DevicesRouter({ devices: #{@devices.to_json.html_safe} });
+    window.usersRouter = new MDM.Routers.UsersRouter()
     Backbone.history.start();

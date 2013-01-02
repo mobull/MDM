@@ -1,7 +1,8 @@
 class MDM.Routers.UsersRouter extends Backbone.Router
   initialize: (options) ->
     @users = new MDM.Collections.UsersCollection()
-    @users.reset options.users
+    # @users.reset options.users
+    @users.fetch()
 
   routes:
     "users/new"      : "newUsers"

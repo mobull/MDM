@@ -11,7 +11,7 @@ class MDM.Routers.DevicesRouter extends Backbone.Router
     "devices/index"    : "index"
     "devices/:id/edit" : "edit"
     "devices/:id"      : "show"
-    "devices"          : "index"
+    "devices./*"       : "index"
 
   newDevice: ->
     @view = new MDM.Views.Devices.NewView(collection: @devices)

@@ -18,5 +18,6 @@
 //= require backbone_datalink
 //= require backbone-forms/distribution/backbone-forms.min
 //= require backbone-forms/distribution/editors/list.min
+//= require Backbone-relational/backbone-relational.js
 //= require backbone/mdm
 //= require_tree .

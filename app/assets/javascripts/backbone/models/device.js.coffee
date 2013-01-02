@@ -1,6 +1,8 @@
 class MDM.Models.Device extends Backbone.Model
   paramRoot: 'device'
 
+  urlRoot : '/api/v1/devices'
+
   defaults:
     'name': null
     'user_id': null

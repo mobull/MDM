@@ -1,3 +1,6 @@
 [submodule "vendor/assets/javascripts/backbone-forms"]
 	path = vendor/assets/javascripts/backbone-forms
 	url = git@github.com:powmedia/backbone-forms.git
+[submodule "vendor/assets/javascripts/Backbone-relational"]
+	path = vendor/assets/javascripts/Backbone-relational
+	url = git@github.com:PaulUithol/Backbone-relational.git

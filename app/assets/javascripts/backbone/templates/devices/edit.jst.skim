@@ -1,0 +1,8 @@
+h1 Edit device
+
+form#edit_device name=device
+  div.actions
+    input type=submit value="Update Device"
+
+a href=#/index
+  | Back

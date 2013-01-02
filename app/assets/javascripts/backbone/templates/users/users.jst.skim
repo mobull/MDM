@@ -1,0 +1,6 @@
+td
+  a href="#/<%= id %>" Show
+td
+  a href="#/<%= id %>/edit" Edit
+td
+  a.destory href="#/<%= id %>/destroy" Destroy

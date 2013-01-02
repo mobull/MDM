@@ -1,9 +1,8 @@
 class PagesController < ApplicationController
-  layout 'admin', only: [:dashboard]
 
   before_filter :authenticate_user!
 
-  def dashboard
-    
+  def panel
+    @devices = Device.all
   end
 end

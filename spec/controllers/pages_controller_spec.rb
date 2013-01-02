@@ -6,9 +6,9 @@ describe PagesController do
   context 'when user signed in' do
     before { sign_in user }
 
-    describe "GET 'dashboard'" do
+    describe "GET 'panel'" do
       it "returns http success" do
-        get 'dashboard'
+        get 'panel'
         response.should be_success
       end
     end

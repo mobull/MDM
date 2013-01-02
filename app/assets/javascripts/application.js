@@ -16,6 +16,8 @@
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
+//= require backbone-forms/distribution/backbone-forms.min
+//= require backbone-forms/distribution/editors/list.min
+//= require Backbone-relational/backbone-relational.js
 //= require backbone/mdm
-//  require crown
 //= require_tree .

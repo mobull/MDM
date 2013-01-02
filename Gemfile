@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 gem 'jquery-rails'
-gem 'slim'
+gem 'bcrypt-ruby'
 gem 'slim-rails'
 gem 'cancan'
 gem 'strong_parameters'
-gem 'formtastic'
+
+gem 'jbuilder'
 gem 'rails-backbone'
-gem 'bcrypt-ruby'
 
 group :development do
   gem 'guard-rspec'
@@ -28,6 +28,9 @@ group :test, :development do
   gem 'spork-rails'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'jasmine'
+  gem 'guard-jasmine'
+  gem 'jasminerice'
 end
 
 # Gems used only for assets and not required
@@ -40,10 +43,8 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'skim'
 end
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
 
 # Use unicorn as the app server
 # gem 'unicorn'

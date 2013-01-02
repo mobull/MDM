@@ -1,0 +1,7 @@
+h1 New user
+
+form#new-user name="user"
+  .actions    
+    input type="submit" value="Create Users" 
+
+a href="#/index" Back

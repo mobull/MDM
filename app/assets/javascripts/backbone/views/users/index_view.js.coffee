@@ -4,13 +4,7 @@ class MDM.Views.Users.IndexView extends Backbone.View
   template: JST["backbone/templates/users/index"]
 
   initialize: () ->
-    @userIndexView = new UserIndexView();
     @options.users.bind('reset', @addAll, this);
-    @options.users.bind('all', @render, this);
-    @options.users.fetch slicent: true, success: (collection, response) ->
-      if response?
-        collection.reset(response.user)
-      else userIndexView.render();
 
   addAll: () =>
     @options.users.each(@addOne)

@@ -3,8 +3,8 @@ h1 Listing users
 table#users-table
   tr
     th User Name
-    th
-    th
+    th Email
+    th Operations
 
 br
 

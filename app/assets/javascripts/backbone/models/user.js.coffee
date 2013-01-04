@@ -1,10 +1,10 @@
-class MDM.Models.Users extends Backbone.Model
+class MDM.Models.User extends Backbone.Model
   paramRoot: 'user'
 
   defaults:
-  	'name': '(Untitled User)'
+  	'name': null
   	'email': null
 
 class MDM.Collections.UsersCollection extends Backbone.Collection
-  model: MDM.Models.Users
+  model: MDM.Models.User
   url: '/api/v1/users'

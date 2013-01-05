@@ -8,5 +8,5 @@ table#users-table
 
 br
 
-a href="#/new"
+a href="#users/new"
 	|	New Users

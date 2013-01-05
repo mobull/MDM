@@ -11,7 +11,7 @@ class MDM.Routers.UsersRouter extends Backbone.Router
     "users/:id"      : "show"
     "users./*"       : "index"
 
-  newUsers: ->
+  newUser: ->
     @view = new MDM.Views.Users.NewView(collection: @users)
     $("#container").html(@view.render().el)
 

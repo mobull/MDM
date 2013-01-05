@@ -4,7 +4,7 @@ class MDM.Views.Users.NewView extends Backbone.View
   template: JST["backbone/templates/users/new"]
 
   events:
-    "submit #new-users": "save"
+    "submit #new-user": "save"
 
   constructor: (options) ->
     super(options)

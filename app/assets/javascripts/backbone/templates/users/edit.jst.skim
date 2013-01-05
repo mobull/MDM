@@ -4,5 +4,5 @@ form#edit-user name="user"
   .actions
     input type="submit" value="Update Users" 
 
-a href="#/index" 
+a href="#users/index" 
   | Back

@@ -2,4 +2,4 @@ h1 New user
 form#new-user name="user"
   .actions    
     input type="submit" value="Create User" 
-a href="#/index" Back
+a href="#users/index" Back

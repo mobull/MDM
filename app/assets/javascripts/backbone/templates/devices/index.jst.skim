@@ -7,5 +7,5 @@ table#devices-table
     th Operations
 br
 
-a href='devices#new'
-  New Device
+a href='#devices/new'
+  |	New Device

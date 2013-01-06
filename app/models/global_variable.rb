@@ -15,7 +15,15 @@ class GlobalVariable < ActiveRecord::Base
 
   serialize :content
 
-  ALLOWED_VARIABLES = %w(company_legal_name company_display_name help_desk_guide)
+  ALLOWED_VARIABLES = %w(
+                         configuration_updated_at
+                         company_legal_name
+                         company_display_name
+                         help_desk_guide
+                         ios_payload_identifier
+                         ios_payload_display_name
+                         ios_payload_description
+                         )
 
   validates :name, presence: true,
                    uniqueness: { case_sensitive: false },
@@ -28,7 +36,9 @@ class GlobalVariable < ActiveRecord::Base
 
     define_singleton_method "#{variable_name}=" do |content|
       variable = find_or_create_by_name(name: variable_name, content: content)
-      variable.update_attributes(content: content) unless variable.content == content
+      unless variable.content == content
+        variable.update_attributes(content: content)
+      end
     end
   end
 end

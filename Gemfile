@@ -6,6 +6,8 @@ gem 'bcrypt-ruby'
 gem 'slim-rails'
 gem 'cancan'
 gem 'strong_parameters'
+gem 'bcrypt-ruby'
+gem 'plist'
 
 gem 'jbuilder'
 gem 'rails-backbone'

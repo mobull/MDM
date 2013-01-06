@@ -6,15 +6,13 @@ module Api
 
       respond_to :json
 
-      def edit
-        @configuration = ::Configuration.new
-        respond_with @configuration
+      def show
+        respond_with configuration
       end
 
       def update
-        configuration = ::Configuration.new
-        flash[notice] = 'Configuration was successfully updated.' if configuration.update_attributes(configuration_params)
-        respond_with configuration, location: configuration_path
+        flash[:notice] = 'Configuration was successfully updated.' if configuration.update_attributes(configuration_params)
+        respond_with configuration, location: api_v1_configuration_path
       end
 
       private

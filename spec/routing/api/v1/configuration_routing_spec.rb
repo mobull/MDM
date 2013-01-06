@@ -4,7 +4,7 @@ describe Api::V1::ConfigurationController do
   describe "routing" do
     
     it "routes to #edit" do
-      get("/api/v1/configuration").should route_to("api/v1/configuration#edit")
+      get("/api/v1/configuration").should route_to("api/v1/configuration#show")
     end
 
     it "routes to #update" do

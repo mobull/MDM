@@ -1,9 +1,17 @@
 require 'spec_helper'
 
 describe Configuration do
-  FIELDS_STORE_IN_GLOBAL_VARIABLES = [:company_legal_name, :company_display_name, :help_desk_guide]
+  FIELDS_STORE_IN_GLOBAL_VARIABLES = [
+    :company_legal_name,
+    :company_display_name,
+    :help_desk_guide,
+    :ios_payload_identifier,
+    :ios_payload_display_name,
+    :ios_payload_description,
+  ]
+
   let(:configuration) { Configuration.new }
-  let(:random_string) { Faker::Lorem.words(6) }
+  let(:random_string) { Faker::Lorem.words(6).join(' ') }
 
   describe '.new' do
     it 'returns a configuration instance' do
@@ -21,7 +29,8 @@ describe Configuration do
 
     describe "##{field}" do
       it 'returns corresponding content in GlobalVariable' do
-        configuration.send(field).should == GlobalVariable.find_by_name(field).try(:content)
+        configuration.send(field).should == GlobalVariable.find_by_name(field)
+          .try(:content)
       end
     end
 

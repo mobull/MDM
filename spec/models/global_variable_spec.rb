@@ -11,7 +11,17 @@
 require 'spec_helper'
 
 describe GlobalVariable do
-  ALLOWED_VARIABLES = %w(company_legal_name company_display_name help_desk_guide)
+  ALLOWED_VARIABLES = %w(
+                         configuration_updated_at
+                         company_legal_name
+                         company_display_name
+                         company_identifier
+                         help_desk_guide
+                         ios_payload_identifier
+                         ios_payload_display_name
+                         ios_payload_description
+                         )
+
   let(:company_legal_name) { FactoryGirl.create(:company_legal_name) }
 
   it 'rejects blank variable name' do

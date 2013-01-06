@@ -13,8 +13,14 @@ MDM::Application.routes.draw do
       resources :roles
       resources :groups
       resources :profiles
-      put "configuration" => 'configuration#update'
+      get 'configuration', to: 'configuration#show'
+      put 'configuration', to: 'configuration#update'
     end
+  end
+
+  namespace :ios do
+    resources :enrollments
+    resources :profiles
   end
 
   # The priority is based upon order of creation:

@@ -15,7 +15,6 @@ describe GlobalVariable do
                          configuration_updated_at
                          company_legal_name
                          company_display_name
-                         company_identifier
                          help_desk_guide
                          ios_payload_identifier
                          ios_payload_display_name

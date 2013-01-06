@@ -9,7 +9,7 @@ class Configuration
     :ios_payload_description,
   ]
 
-  FIELDS_STORE_IN_GLOBAL_VARIABLES.each { |field| attr_accessor field }
+  attr_accessor *FIELDS_STORE_IN_GLOBAL_VARIABLES
 
   def initialize
     GlobalVariable.configuration_updated_at ||= Time.now

@@ -1,13 +1,12 @@
 td
-  = @name
+  = @groupname
+
 td
-  = @user_id
-td
-  a href="#devices/#{ @id }"
+  a href="#groups/#{ @id }"
     | Show
   '  | 
-  a href="#devices/#{ @id }/edit"
+  a href="#groups/#{ @id }/edit"
     | Edit
   '  | 
-  a href="#devices/#{ @id }/destroy"
+  a href="#groups/#{ @id }/destroy"
     | Destroy

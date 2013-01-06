@@ -1,0 +1,13 @@
+h1 Listing groups
+
+table#groups-table
+  tr
+    th Group Name
+    th 
+    th
+
+
+br
+
+a href="#groups/new"
+	|	New Group

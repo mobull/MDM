@@ -1,0 +1,13 @@
+td
+  = @name
+td
+  = @user_id
+td
+  a href="#devices/#{ @id }"
+    | Show
+  '  | 
+  a href="#devices/#{ @id }/edit"
+    | Edit
+  '  | 
+  a href="#devices/#{ @id }/destroy"
+    | Destroy

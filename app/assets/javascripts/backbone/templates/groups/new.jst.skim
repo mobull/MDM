@@ -1,0 +1,8 @@
+h1 New group
+
+form#new-group name="group"
+	.actions
+    input type="submit" value="Create Group" 
+
+a href="#groups/index"
+  | Back

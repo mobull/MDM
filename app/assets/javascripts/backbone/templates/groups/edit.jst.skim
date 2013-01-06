@@ -1,0 +1,8 @@
+h1 Edit group
+
+form#edit-group name="group"
+	.actions
+    input type="submit" value="Update Group" 
+
+a href="#groups/index"
+  | Back

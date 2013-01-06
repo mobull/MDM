@@ -4,4 +4,5 @@ div#container
   javascript:
     window.devicesRouter = new MDM.Routers.DevicesRouter({ devices: #{@devices.to_json.html_safe} });
     window.usersRouter = new MDM.Routers.UsersRouter()
+    window.groupsRouter = new MDM.Routers.GroupsRouter()
     Backbone.history.start();

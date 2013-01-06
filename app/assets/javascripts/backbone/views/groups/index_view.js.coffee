@@ -4,6 +4,7 @@ class MDM.Views.Groups.IndexView extends Backbone.View
   template: JST["backbone/templates/groups/index"]
 
   initialize: () ->
+    _.bindAll(this, 'render')
     @options.groups.bind('reset', @addAll)
 
   addAll: () =>

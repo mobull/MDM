@@ -5,7 +5,7 @@ class MDM.Views.Users.IndexView extends Backbone.View
 
   initialize: () ->
     _.bindAll(this, 'render')
-    @options.users.bind('reset', @addAll, this);
+    @options.users.bind('reset', @addAll, this)
 
   addAll: () =>
     @options.users.each(@addOne)

@@ -15,6 +15,18 @@ module Api
         @group = Group.find(params[:id])
         respond_with @group
       end
+
+      def create
+        @group = Group.new
+        @group.update_attributes(group_param)
+        respond_with @group, location: api_v1_group_url(@group)
+      end
+
+      private
+
+        def group_param
+          params.require(:group).permit(:name)
+        end
     end
   end
 end

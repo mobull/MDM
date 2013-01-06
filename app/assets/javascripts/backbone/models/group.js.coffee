@@ -2,7 +2,7 @@ class MDM.Models.Group extends Backbone.Model
   paramRoot: 'group'
 
   defaults:
-  	'groupname': null
+  	'name': '(Untitled Group)'
 
 class MDM.Collections.GroupsCollection extends Backbone.Collection
   model: MDM.Models.Group

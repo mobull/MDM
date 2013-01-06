@@ -9,7 +9,7 @@ class MDM.Routers.GroupsRouter extends Backbone.Router
     "groups/index"    : "index"
     "groups/:id/edit" : "edit"
     "groups/:id"      : "show"
-    "groups/.*"        : "index"
+    "groups/*"        : "index"
 
   newGroup: ->
     @view = new MDM.Views.Groups.NewView(collection: @groups)

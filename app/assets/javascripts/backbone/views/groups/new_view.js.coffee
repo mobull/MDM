@@ -23,7 +23,7 @@ class MDM.Views.Groups.NewView extends Backbone.View
     @collection.create(@model.toJSON(),
       success: (group) =>
         @model = group
-        window.location.hash = "/#{@model.id}"
+        window.location.hash = "groups/#{@model.id}"
 
       error: (group, jqXHR) =>
         @model.set({errors: $.parseJSON(jqXHR.responseText)})

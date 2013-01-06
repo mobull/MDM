@@ -23,7 +23,7 @@ class MDM.Views.Users.NewView extends Backbone.View
     @collection.create(@model.toJSON(),
       success: (users) =>
         @model = users
-        window.location.hash = "/#{@model.id}"
+        window.location.hash = "users/#{@model.id}"
 
       error: (users, jqXHR) =>
         @model.set({errors: $.parseJSON(jqXHR.responseText)})
